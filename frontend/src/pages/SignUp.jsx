@@ -46,6 +46,7 @@ const SignUp = () => {
   };
 
   return (
+    
     <>
       {isLoading && (
         <div className="absolute inset-0 w-full h-full bg-black opacity-30 z-50">
