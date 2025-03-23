@@ -14,7 +14,10 @@
     "lucide-react": "^0.483.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+<<<<<<< HEAD
     "react-hook-form": "^7.54.2",
+=======
+>>>>>>> 5244cda30232b61da2cacb25a0caa71775900379
     "react-hot-toast": "^2.5.2",
     "react-router-dom": "^7.4.0"
   },

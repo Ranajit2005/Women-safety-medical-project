@@ -1,17 +1,27 @@
-import { Routes, Route } from 'react-router-dom'
+import React from 'react'
+import { Routes, Route, Navigate } from 'react-router-dom'
+import SignUp from './pages/SignUp'
+import LogIn from './pages/LogIn'
 import Home from './pages/Home'
-import SignUp from './pages/SignUp';
+
+
 
 
 function App() {
-  let a = false;
+
 
   return (
-  
-    
-      <>
-      </>
-    
+    <div>
+
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<LogIn />} />
+        <Route path="/signup" element={<SignUp />} />
+      </Routes>
+
+
+    </div>
   )
 }
 
