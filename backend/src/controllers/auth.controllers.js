@@ -1,31 +1,35 @@
 import User from "../models/user.model.js";
 import bcrypt from "bcryptjs";
 import { generateToken } from "../lib/utils.js";
-import cloudinary from "../lib/cloudinary.js";
-
-
 
 
 const signup = async (req, res) => {
-    const { fullName, email, password } = req.body;
+    const { fullName, email, password, age, profession, bio} = req.body;
     try {
-        if (!fullName || !email || !password) {
-            return res.status(400).json({ message: "Please fill all the fields" });
-        }
-        if (password.length < 6) {
-            return res.status(400).json({ message: "Password must be atleast 6 characters long" });
-        }
+        // if (!fullName || !email || !password) {
+        //     return res.status(400).json({ message: "Please fill all the fields" });
+        // }
+        // if (password.length < 6) {
+        //     return res.status(400).json({ message: "Password must be atleast 6 characters long" });
+        // }
         const user = await User.findOne({ email });
+
         if (user) {
-            return res.status(400).json({ message: "User already exists" });
+            return res.status(400).json({ 
+                message: "User already exists",
+                success: false
+            });
         }
 
         const salt = await bcrypt.genSalt(12);
         const hassedPassword = await bcrypt.hash(password, salt);
         const newUser = new User({
-            fullName: fullName,
-            email: email,
-            password: hassedPassword
+            fullName,
+            email,
+            password: hassedPassword,
+            age,
+            profession,
+            bio
         });
 
         if (newUser) {
@@ -35,7 +39,6 @@ const signup = async (req, res) => {
             return res.status(201).json({
                 message: "User created successfully",
                 _id: newUser._id,
-                profilepic: newUser.profilepic,
                 fullName: newUser.fullName,
                 email: newUser.email,
                 createdAt: newUser.createdAt,
@@ -43,50 +46,58 @@ const signup = async (req, res) => {
 
         }
         else {
-            return res.status(400).json({ message: "Something went wrong" });
+            return res.status(400).json({ 
+                message: "Something went wrong",
+                success: false
+            });
         }
 
     } catch (error) {
-        return res.status(400).json({ message: "Something went wrong in signup" });
+        return res.status(400).json({ 
+            message: "Something went wrong in signup",
+            success: false
+        });
     }
 }
 
 
-
-
-
-
 const login = async (req, res) => {
+
     const { email, password } = req.body;
+
     try {
         const user = await User.findOne({ email });
         if (!user) {
-            return res.status(400).json({ message: "User does not exist" });
+            return res.status(400).json({ 
+                message: "User does not exist",
+                success: false
+            });
         }
+
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) {
-            return res.status(400).json({ message: "Invalid credentials" });
+            return res.status(400).json({ 
+                message: "Invalid credentials",
+                success: false
+            });
         }
 
         generateToken(user._id, res);
         return res.status(200).json({
             message: "User logged in successfully",
             _id: user._id,
-            profilepic: user.profilepic,
             fullName: user.fullName,
             email: user.email,
             createdAt: user.createdAt,
         });
 
     } catch (error) {
-        return res.status(500).json({ message: "Internal server error in login" });
+        return res.status(500).json({ 
+            message: "Internal server error in login",
+            success: false
+        });
     }
 }
-
-
-
-
-
 
 
 const logout = async (req, res) => {
@@ -107,4 +118,3 @@ const logout = async (req, res) => {
 
 
 export { signup, login, logout };
-
