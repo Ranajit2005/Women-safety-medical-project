@@ -35,6 +35,7 @@ const SignUp = () => {
       });
 
       console.log(data);
+      console.log(data.success);
 
       setLoading(false);
       navigate('/');
@@ -184,7 +185,7 @@ const SignUp = () => {
           >
             Sign Up
           </button>
-          <p className="text-center text-gray-600 mt-4">Already have an account? <a href="/login" className="text-blue-500 hover:underline">Log in</a></p>
+          <p className="text-center text-gray-600 mt-4">Already have an account? <a href="/login" className="text-blue-700 hover:underline">Log in</a></p>
         </form>
       </div>
     </>
