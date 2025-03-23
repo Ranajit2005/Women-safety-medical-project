@@ -59,13 +59,13 @@ const SignUp = () => {
       {/* Background Image with Opacity */}
       <div
         className="fixed inset-0 w-full h-full bg-cover bg-center opacity-50"
-        style={{ backgroundImage: `url('/backgroundSignUp.jpg')` }}
+        style={{ backgroundImage: `url('/background 1.webp')` }}
       ></div>
 
       <div className="flex justify-center items-center h-screen relative mx-3 sm:mx-0 top-10 pt-10 ">
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="bg-purple-500 text-black p-4 sm:p-8 rounded-lg shadow-lg w-80 sm:w-96"
+          className="bg-[#f542b0] text-black p-4 sm:p-8 rounded-lg shadow-lg w-80 sm:w-96"
         >
           <h2 className="text-2xl font-bold mb-6 text-gray-800 text-center">
             Sign Up
