@@ -4,11 +4,11 @@ let isConnected = false;
 
 export const connectDB = async () => {
 
-    if(!process.env.MONGO_URL){
+    if (!process.env.MONGO_URL) {
         console.log("Database is not connected");
     }
 
-    if(isConnected) {
+    if (isConnected) {
         console.log("Using existing connection");
         return;
     }
@@ -21,7 +21,7 @@ export const connectDB = async () => {
     } catch (error) {
         console.log("Error in connecting to database");
         console.log(error);
-        
+
     }
 
 }
