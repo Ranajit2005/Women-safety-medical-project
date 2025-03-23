@@ -1,11 +1,18 @@
+import { Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import SignUp from './pages/SignUp';
+
 
 function App() {
-  
+  let a = false;
 
   return (
-    <>
-      <div className="bg-red-300 text-green-600">Welcome</div>
-    </>
+  
+    
+      <Routes>
+        <Route path='/' element={ a ? <Home/> : <SignUp/>}/>
+      </Routes>
+    
   )
 }
 
