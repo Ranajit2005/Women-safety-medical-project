@@ -1,6 +1,5 @@
 import axios from "axios";
 import { Loader2 } from "lucide-react";
-import React from "react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
@@ -46,7 +45,7 @@ const SignUp = () => {
   };
 
   return (
-    
+
     <>
       {isLoading && (
         <div className="absolute inset-0 w-full h-full bg-black opacity-30 z-50">
@@ -57,7 +56,7 @@ const SignUp = () => {
       )}
 
       {/* Background Image with Opacity */}
-      <div 
+      <div
         className="fixed inset-0 w-full h-full bg-cover bg-center opacity-50"
         style={{ backgroundImage: `url('/backgroundSignUp.jpg')` }}
       ></div>
