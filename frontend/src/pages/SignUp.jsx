@@ -6,7 +6,6 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
-
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -24,49 +23,48 @@ const SignUp = () => {
   } = useForm();
 
   const onSubmit = async () => {
-
-    // event.stopPropagation();
-
     try {
-        setLoading(true);
-        const { data } = await axios.post('http://localhost:5000/api/auth/signup', {
-            fullName,
-            email,
-            password,
-            age,
-            profession,
-            bio
-        })
+      setLoading(true);
+      console.log(fullName, email, password, age, profession, bio);
+      const { data } = await axios.post('http://localhost:5000/api/auth/signup', {
+        fullName,
+        email,
+        password,
+        age,
+        profession,
+        bio
+      });
 
-        console.log(data);
+      console.log(data);
 
-        setLoading(false);
-        navigate('/')
+      setLoading(false);
+      navigate('/');
 
     } catch (error) {
-        console.log(error);
-        
+      console.log(error);
     }
-
-
-    console.log(data);
   };
 
   return (
     <>
-
       {isLoading && (
-        <div className="absolute inset-0 w-full h-full bg-black opacity-50">
+        <div className="absolute inset-0 w-full h-full bg-black opacity-30 z-50">
           <div className="flex justify-center items-center h-full">
-            <Loader2 className="animate-spin text-sky-500" />
+            <Loader2 className="animate-spin text-sky-600" />
           </div>
         </div>
       )}
 
-      <div className="flex justify-center items-center mx-auto bg-black">
+      {/* Background Image with Opacity */}
+      <div 
+        className="fixed inset-0 w-full h-full bg-cover bg-center opacity-50"
+        style={{ backgroundImage: `url('/backgroundSignUp.jpg')` }}
+      ></div>
+
+      <div className="flex justify-center items-center h-screen relative mx-3 sm:mx-0 top-10 pt-10 ">
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="bg-purple-400 text-black p-8 rounded-lg shadow-lg w-80 sm:w-96"
+          className="bg-purple-500 text-black p-4 sm:p-8 rounded-lg shadow-lg w-80 sm:w-96"
         >
           <h2 className="text-2xl font-bold mb-6 text-gray-800 text-center">
             Sign Up
@@ -78,7 +76,7 @@ const SignUp = () => {
             <input
               type="text"
               {...register("fullName", { required: "Full Name is required" })}
-              className="w-full p-2 border border-gray-300 rounded mt-1"
+              className="w-full p-2 border border-gray-300 rounded mt-1 bg-purple-200"
               onChange={(e) => setFullName(e.target.value)}
             />
             {errors.fullName && (
@@ -100,7 +98,7 @@ const SignUp = () => {
                   message: "Enter a valid email",
                 },
               })}
-              className="w-full p-2 border border-gray-300 rounded mt-1"
+              className="w-full p-2 border border-gray-300 rounded mt-1 bg-purple-200"
               onChange={(e) => setEmail(e.target.value)}
             />
             {errors.email && (
@@ -110,7 +108,7 @@ const SignUp = () => {
             )}
           </div>
 
-          {/* {password } */}
+          {/* Password Field */}
           <div className="mb-1">
             <label className="block text-gray-700">Password</label>
             <input
@@ -122,7 +120,7 @@ const SignUp = () => {
                   message: "Password must be at least 6 characters long",
                 },
               })}
-              className="w-full p-2 border border-gray-300 rounded mt-1"
+              className="w-full p-2 border border-gray-300 rounded mt-1 bg-purple-100"
               onChange={(e) => setPassword(e.target.value)}
             />
             {errors.password && (
@@ -139,9 +137,9 @@ const SignUp = () => {
               type="number"
               {...register("age", {
                 required: "Age is required",
-                min: { value: 0, message: "Give a valide age" },
+                min: { value: 0, message: "Give a valid age" },
               })}
-              className="w-full p-2 border border-gray-300 rounded mt-1"
+              className="w-full p-2 border border-gray-300 rounded mt-1 bg-purple-100"
               onChange={(e) => setAge(e.target.value)}
             />
             {errors.age && (
@@ -149,12 +147,13 @@ const SignUp = () => {
             )}
           </div>
 
+          {/* Profession Field */}
           <div className="mb-1">
             <label className="block text-gray-700">Profession</label>
             <input
               type="text"
               {...register("profession")}
-              className="w-full p-2 border border-gray-300 rounded mt-1"
+              className="w-full p-2 border border-gray-300 rounded mt-1 bg-purple-50"
               onChange={(e) => setProfession(e.target.value)}
             />
             {errors.fullName && (
