@@ -43,9 +43,10 @@ app.use('/api/auth', authRouter);
 
 
 app.get('/', (req, res) => {
-    res.send('Hello World');
+    res.send('Hello World , frontend url is ' + FRONTEND_URL);
 });
 
 app.listen(PORT, () => {
     console.log(`Server is running at  http://localhost:${PORT}`);
+
 })
