@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 
 const AutoScrollBox = () => {
-  const boxRef = useRef(null); // Ref to the scrollable box
-  const itemRef = useRef(null); // Ref to the first item to measure its width
+  const boxRef = useRef<HTMLDivElement>(null); // Ref to the scrollable box
+  const itemRef = useRef<HTMLDivElement>(null); // Ref to the first item to measure its width
   const [itemWidth, setItemWidth] = useState(0); // State to store the width of an item
 
   useEffect(() => {
@@ -44,6 +44,7 @@ const AutoScrollBox = () => {
         <div
           ref={itemRef} // Ref to measure the width of this item
           className="bg-purple-500 grid grid-cols-1 sm:grid-cols-2 text-white rounded-lg w-screen h-72 overflow-auto"
+          
         >
             <div className="flex justify-center items-center ">
             <img 
@@ -56,7 +57,7 @@ const AutoScrollBox = () => {
             <div className="flex flex-col pl-1 pt-3 sm:pl-5 ">
           <h1 className="text-2xl sm:text-3xl">abc</h1>
           <p className="text-justify pr-5 pt-1">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, nemo! Velit repellendus hic commodi eos aliquid accusantium exercitationem obcaecati fuga, perspiciatis non itaque, voluptatum quam eum et aut vel esse deleniti sit, ipsam rerum a recusandae ratione inventore soluta. Nulla totam id dolorem iste nihil corrupti quis in quas. Consequuntur, accusantium, distinctio error sit mollitia tempore placeat quis eligendi, repellat quasi atque eum. Excepturi dicta vel est blanditiis debitis error, nihil iste iure harum exercitationem tempore sunt repellat reprehenderit
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, nemo! Velit repellendus hic commodi eos aliquid accusantium exercitationem obcaecati fuga, perspiciatis non 
           </p>
           </div>
         </div>
@@ -77,7 +78,7 @@ const AutoScrollBox = () => {
             <div className="flex flex-col pl-1 pt-3 ">
           <h1 className="text-2xl sm:text-3xl">abc</h1>
           <p className="text-justify pr-5 pt-1">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, nemo! Velit repellendus hic commodi eos aliquid accusantium exercitationem obcaecati fuga, perspiciatis non itaque, voluptatum quam eum et aut vel esse deleniti sit, ipsam rerum a recusandae ratione inventore soluta. Nulla totam id dolorem iste nihil corrupti quis in quas. Consequuntur, accusantium, distinctio error sit mollitia tempore placeat quis eligendi, repellat quasi atque eum. Excepturi dicta vel est blanditiis debitis error, nihil iste iure harum exercitationem tempore sunt repellat reprehenderit, eos, modi maiores dolores eveniet quis temporibus? Nulla fugiat atque facere autem quos voluptatum, veniam molestias rerum molestiae, repudiandae minima tenetur!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, nemo! Velit repellendus hic commodi eos aliquid accusantium exercitationem obcaecati fuga, perspiciatis non 
           </p>
           </div>
         </div>
@@ -97,7 +98,27 @@ const AutoScrollBox = () => {
             <div className="flex flex-col pl-1 pt-3 ">
           <h1 className="text-2xl sm:text-3xl">abc</h1>
           <p className="text-justify pr-5 pt-1">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, nemo! Velit repellendus hic commodi eos aliquid accusantium exercitationem obcaecati fuga, perspiciatis non itaque, voluptatum quam eum et aut vel esse deleniti sit, ipsam rerum a recusandae ratione inventore soluta. Nulla totam id dolorem iste nihil corrupti quis in quas. Consequuntur, accusantium, distinctio error sit mollitia tempore placeat quis eligendi, repellat quasi atque eum. Excepturi dicta vel est blanditiis debitis error, nihil iste iure harum exercitationem tempore sunt repellat reprehenderit, eos, modi maiores dolores eveniet quis temporibus? Nulla fugiat atque facere autem quos voluptatum, veniam molestias rerum molestiae, repudiandae minima tenetur!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, nemo! Velit repellendus hic commodi eos aliquid accusantium exercitationem obcaecati fuga, perspiciatis non 
+          </p>
+          </div>
+        </div>
+
+        <div
+          ref={itemRef} // Ref to measure the width of this item
+          className="bg-purple-500 grid grid-cols-1 sm:grid-cols-2 text-white rounded-lg w-screen h-72 overflow-auto "
+        >
+            <div className="flex justify-center items-center ">
+            <img 
+                src="/background 1.webp"
+                alt="abc"
+                width={450}
+                className="bg-blue-400 p-3 rounded-lg "
+            />
+            </div>
+            <div className="flex flex-col pl-1 pt-3 ">
+          <h1 className="text-2xl sm:text-3xl">abc</h1>
+          <p className="text-justify pr-5 pt-1">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, nemo! Velit repellendus hic commodi eos aliquid accusantium exercitationem obcaecati fuga, perspiciatis non 
           </p>
           </div>
         </div>
@@ -117,7 +138,7 @@ const AutoScrollBox = () => {
             <div className="flex flex-col pl-1 pt-3 ">
           <h1 className="text-2xl sm:text-3xl">abc</h1>
           <p className="text-justify pr-5 pt-1">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, nemo! Velit repellendus hic commodi eos aliquid accusantium exercitationem obcaecati fuga, perspiciatis non itaque, voluptatum quam eum et aut vel esse deleniti sit, ipsam rerum a recusandae ratione inventore soluta. Nulla totam id dolorem iste nihil corrupti quis in quas. Consequuntur, accusantium, distinctio error sit mollitia tempore placeat quis eligendi, repellat quasi atque eum. Excepturi dicta vel est blanditiis debitis error, nihil iste iure harum exercitationem tempore sunt repellat reprehenderit, eos, modi maiores dolores eveniet quis temporibus? Nulla fugiat atque facere autem quos voluptatum, veniam molestias rerum molestiae, repudiandae minima tenetur!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, nemo! Velit repellendus hic commodi eos aliquid accusantium exercitationem obcaecati fuga, perspiciatis non itaque, voluptatum quam eum et aut vel esse deleniti sit, ipsam rerum a recusandae 
           </p>
           </div>
         </div>
@@ -137,7 +158,7 @@ const AutoScrollBox = () => {
             <div className="flex flex-col pl-1 pt-3 ">
           <h1 className="text-2xl sm:text-3xl">abc</h1>
           <p className="text-justify pr-5 pt-1">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, nemo! Velit repellendus hic commodi eos aliquid accusantium exercitationem obcaecati fuga, perspiciatis non itaque, voluptatum quam eum et aut vel esse deleniti sit, ipsam rerum a recusandae ratione inventore soluta. Nulla totam id dolorem iste nihil corrupti quis in quas. Consequuntur, accusantium, distinctio error sit mollitia tempore placeat quis eligendi, repellat quasi atque eum. Excepturi dicta vel est blanditiis debitis error, nihil iste iure harum exercitationem tempore sunt repellat reprehenderit, eos, modi maiores dolores eveniet quis temporibus? Nulla fugiat atque facere autem quos voluptatum, veniam molestias rerum molestiae, repudiandae minima tenetur!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, nemo! Velit repellendus hic commodi eos aliquid accusantium exercitationem obcaecati fuga, perspiciatis non itaque, voluptatum quam eum et aut vel esse deleniti sit, ipsam rerum a recusandae 
           </p>
           </div>
         </div>
@@ -157,27 +178,7 @@ const AutoScrollBox = () => {
             <div className="flex flex-col pl-1 pt-3 ">
           <h1 className="text-2xl sm:text-3xl">abc</h1>
           <p className="text-justify pr-5 pt-1">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, nemo! Velit repellendus hic commodi eos aliquid accusantium exercitationem obcaecati fuga, perspiciatis non itaque, voluptatum quam eum et aut vel esse deleniti sit, ipsam rerum a recusandae ratione inventore soluta. Nulla totam id dolorem iste nihil corrupti quis in quas. Consequuntur, accusantium, distinctio error sit mollitia tempore placeat quis eligendi, repellat quasi atque eum. Excepturi dicta vel est blanditiis debitis error, nihil iste iure harum exercitationem tempore sunt repellat reprehenderit, eos, modi maiores dolores eveniet quis temporibus? Nulla fugiat atque facere autem quos voluptatum, veniam molestias rerum molestiae, repudiandae minima tenetur!
-          </p>
-          </div>
-        </div>
-
-        <div
-          ref={itemRef} // Ref to measure the width of this item
-          className="bg-purple-500 grid grid-cols-1 sm:grid-cols-2 text-white rounded-lg w-screen h-72 overflow-auto"
-        >
-            <div className="flex justify-center items-center ">
-            <img 
-                src="/background 1.webp"
-                alt="abc"
-                width={450}
-                className="bg-blue-400 p-3 rounded-lg"
-            />
-            </div>
-            <div className="flex flex-col pl-1 pt-3 ">
-          <h1 className="text-2xl sm:text-3xl">abc</h1>
-          <p className="text-justify pr-5 pt-1">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, nemo! Velit repellendus hic commodi eos aliquid accusantium exercitationem obcaecati fuga, perspiciatis non itaque, voluptatum quam eum et aut vel esse deleniti sit, ipsam rerum a recusandae ratione inventore soluta. Nulla totam id dolorem iste nihil corrupti quis in quas. Consequuntur, accusantium, distinctio error sit mollitia tempore placeat quis eligendi, repellat quasi atque eum. Excepturi dicta vel est blanditiis debitis error, nihil iste iure harum exercitationem tempore sunt repellat reprehenderit, eos, modi maiores dolores eveniet quis temporibus? Nulla fugiat atque facere autem quos voluptatum, veniam molestias rerum molestiae, repudiandae minima tenetur!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, nemo! Velit repellendus hic commodi eos aliquid accusantium exercitationem obcaecati fuga, perspiciatis non 
           </p>
           </div>
         </div>
