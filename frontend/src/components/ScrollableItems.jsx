@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 
 const AutoScrollBox = () => {
-  const boxRef = useRef<HTMLDivElement>(null); // Ref to the scrollable box
-  const itemRef = useRef<HTMLDivElement>(null); // Ref to the first item to measure its width
+  const boxRef = useRef(null); // Ref to the scrollable box
+  const itemRef = useRef(null); // Ref to the first item to measure its width
   const [itemWidth, setItemWidth] = useState(0); // State to store the width of an item
 
   useEffect(() => {
