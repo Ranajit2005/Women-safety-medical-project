@@ -10,7 +10,7 @@ const AutoScrollBox = () => {
 
     // Measure the width of the first item
     if (itemRef.current) {
-      setItemWidth(itemRef.current.offsetWidth+15);
+      setItemWidth(itemRef.current.offsetWidth+30);
     }
 
     // Function to scroll the box
@@ -43,7 +43,7 @@ const AutoScrollBox = () => {
         {/* Fixed-size boxes with text wrapping */}
         <div
           ref={itemRef} // Ref to measure the width of this item
-          className="bg-purple-500 grid grid-cols-1 sm:grid-cols-2 text-white rounded-lg w-screen h-72 overflow-auto"
+          className="bg-purple-500 grid grid-cols-1 sm:grid-cols-2 text-white rounded-lg w-72 sm:w-screen h-72 overflow-auto"
           
         >
             <div className="flex justify-center items-center ">
@@ -51,7 +51,7 @@ const AutoScrollBox = () => {
                 src="/background 1.webp"
                 alt="abc"
                 width={450}
-                className="bg-blue-400 p-3 rounded-lg"
+                className=" rounded-lg shadow-[4px_4px_10px_rgba(0,0,0,0.3)]"
             />
             </div>
             <div className="flex flex-col pl-1 pt-3 sm:pl-5 ">
@@ -72,7 +72,7 @@ const AutoScrollBox = () => {
                 src="/background 1.webp"
                 alt="abc"
                 width={450}
-                className="bg-blue-400 p-3 rounded-lg"
+                className=" rounded-lg shadow-[4px_4px_10px_rgba(0,0,0,0.3)]"
             />
             </div>
             <div className="flex flex-col pl-1 pt-3 ">
@@ -92,7 +92,7 @@ const AutoScrollBox = () => {
                 src="/background 1.webp"
                 alt="abc"
                 width={450}
-                className="bg-blue-400 p-3 rounded-lg"
+                className=" rounded-lg shadow-[4px_4px_10px_rgba(0,0,0,0.3)]"
             />
             </div>
             <div className="flex flex-col pl-1 pt-3 ">
@@ -112,7 +112,7 @@ const AutoScrollBox = () => {
                 src="/background 1.webp"
                 alt="abc"
                 width={450}
-                className="bg-blue-400 p-3 rounded-lg "
+                className=" rounded-lg shadow-[4px_4px_10px_rgba(0,0,0,0.3)]"
             />
             </div>
             <div className="flex flex-col pl-1 pt-3 ">
@@ -132,7 +132,7 @@ const AutoScrollBox = () => {
                 src="/background 1.webp"
                 alt="abc"
                 width={450}
-                className="bg-blue-400 p-3 rounded-lg"
+                className=" rounded-lg shadow-[4px_4px_10px_rgba(0,0,0,0.3)]"
             />
             </div>
             <div className="flex flex-col pl-1 pt-3 ">
@@ -152,7 +152,7 @@ const AutoScrollBox = () => {
                 src="/background 1.webp"
                 alt="abc"
                 width={450}
-                className="bg-blue-400 p-3 rounded-lg"
+                className=" rounded-lg shadow-[4px_4px_10px_rgba(0,0,0,0.3)]"
             />
             </div>
             <div className="flex flex-col pl-1 pt-3 ">
@@ -172,7 +172,7 @@ const AutoScrollBox = () => {
                 src="/background 1.webp"
                 alt="abc"
                 width={450}
-                className="bg-blue-400 p-3 rounded-lg"
+                className=" shadow-[4px_4px_10px_rgba(0,0,0,0.3)] rounded-lg"
             />
             </div>
             <div className="flex flex-col pl-1 pt-3 ">
