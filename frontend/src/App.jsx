@@ -1,6 +1,6 @@
 import React from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
-import Navbar from './component/Navbar'
+import Navbar from './components/Navbar'
 import SignUp from './pages/SignUp'
 import LogIn from './pages/LogIn'
 import Home from './pages/Home'
@@ -8,6 +8,7 @@ import { useEffect } from 'react'
 import { useAuthStore } from './store/useAuthStore.js'
 
 import { Loader } from 'lucide-react'
+import Footer from './components/Footer.jsx'
 
 
 
@@ -39,7 +40,7 @@ function App() {
         <Route path="/signup" element={!authUser ? <SignUp /> : <Navigate to="/" />} />
       </Routes>
 
-
+      <Footer/>
     </div>
   )
 }

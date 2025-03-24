@@ -1,11 +1,11 @@
-import axios from "axios";
+// import axios from "axios";
 import { Loader2 } from "lucide-react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { useAuthStore } from "../store/useAuthStore.js";
 
-import { axiosInstance } from "../lib/axios.js";
+// import { axiosInstance } from "../lib/axios.js";
 
 const SignUp = () => {
 
