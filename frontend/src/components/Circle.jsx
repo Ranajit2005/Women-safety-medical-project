@@ -7,21 +7,25 @@ function App() {
         imageSrc="backgroundSignUp.jpg"
         title="Women health"
         hoverText="Learn about essential health tips and well-being."
+        link="#"
       />
       <CircleCard
         imageSrc="backgroundSignUp.jpg"
         title="Substances and women's body"
         hoverText="Understand how substances affect women's health."
+        link="#"
       />
       <CircleCard
         imageSrc="backgroundSignUp.jpg"
         title="Community and blogs"
         hoverText="Join the conversation and share your experiences."
+        link="#"
       />
       <CircleCard
         imageSrc="backgroundSignUp.jpg"
         title="Women products"
         hoverText="Explore curated products designed for women."
+        link="#"
       />
     </div>
   );

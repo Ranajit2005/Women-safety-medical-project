@@ -1,5 +1,5 @@
 
-const CircleCard = ({ imageSrc, title, hoverText }) => {
+const CircleCard = ({ imageSrc, title, hoverText,link }) => {
     return (
       <div className="relative w-40 text-center cursor-pointer group ">
         {/* Circle with Image */}
@@ -13,6 +13,14 @@ const CircleCard = ({ imageSrc, title, hoverText }) => {
         {/* Hover Text */}
         <div className="absolute top-24 left-0 right-0 hidden group-hover:block bg-gray-100 p-2 rounded shadow-md text-sm text-gray-600 transition-opacity duration-300">
           {hoverText}
+          <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-500 font-semibold hover:underline inline-block"
+        >
+          More info &rarr;
+        </a>
         </div>
       </div>
     );
