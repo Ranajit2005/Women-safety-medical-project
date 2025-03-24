@@ -6,11 +6,14 @@ const Home = () => {
   return (
 
     <div>
-        <h1 className='mx-auto text-4xl text-center'>Health Issues in Women Your Age</h1>
+        <div className='mt-20'>
+
+        <h1 className='mx-6 sm:mx-10 text-3xl sm:text-4xl text-start'>Health Issues in Women Your Age</h1>
 
         <ScrollableItems/>
+        </div>
         
-        <h1 className='mx-auto text-4xl text-center'>Health</h1>
+        {/* <h1 className='mx-auto text-4xl text-center'>Health</h1> */}
 
         <Circle/>
 

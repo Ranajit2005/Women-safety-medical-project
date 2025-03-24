@@ -2,7 +2,7 @@ import CircleCard from "./CircleCard";
 
 function App() {
   return (
-    <div className="flex flex-wrap justify-around p-5 sm:p-7 gap-3 sm:gap-5 bg-pink-200  ">
+    <div className="flex flex-wrap justify-around p-5 sm:p-7 gap-3 sm:gap-5  ">
       <CircleCard
         imageSrc="backgroundSignUp.jpg"
         title="Women health"

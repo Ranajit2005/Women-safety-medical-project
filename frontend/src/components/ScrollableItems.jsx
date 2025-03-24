@@ -36,7 +36,7 @@ const AutoScrollBox = () => {
   return (
     <div
       ref={boxRef}
-      className="flex overflow-x-auto my-1 sm:my-3 rounded-lg w-full scrollbar-hide" // Full width and hide scrollbar
+      className="flex overflow-x-auto my-1 sm:my-3 rounded-lg w-full scrollbar-hide " // Full width and hide scrollbar
     >
       {/* Content inside the box */}
       <div className="flex space-x-4">
