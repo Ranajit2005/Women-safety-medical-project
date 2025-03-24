@@ -1,6 +1,6 @@
 import CircleCard from "./CircleCard";
 
-function App() {
+function Circle() {
   return (
     <div className="flex flex-wrap justify-around px-5 sm:px-7 gap-3 sm:gap-5  ">
       <CircleCard
@@ -31,4 +31,4 @@ function App() {
   );
 }
 
-export default App;
+export default Circle;
