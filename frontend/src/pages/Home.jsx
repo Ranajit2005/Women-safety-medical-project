@@ -1,13 +1,13 @@
-import React from 'react'
-import AgeWiseDisese from './AgeWiseDisese'
+import React from 'react';
+import ScrollableItems from '../components/ScrollableItems';
 
 const Home = () => {
   return (
 
     <div>
-        <h1>Home Page</h1>
+        <h1 className='mx-auto text-4xl text-center'>Health Issues in Women Your Age</h1>
 
-        <AgeWiseDisese/>
+        <ScrollableItems/>
 
 
       Home Page
