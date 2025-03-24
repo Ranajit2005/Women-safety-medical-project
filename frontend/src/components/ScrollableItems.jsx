@@ -48,17 +48,16 @@ const AutoScrollBox = () => {
         >
             <div className="flex justify-center items-center ">
             <img 
-                src="/background 1.webp"
+                src="/PCOS.webp"
                 alt="abc"
                 width={450}
                 className="bg-blue-400 p-3 rounded-lg"
             />
             </div>
             <div className="flex flex-col pl-1 pt-3 sm:pl-5 ">
-          <h1 className="text-2xl sm:text-3xl">abc</h1>
+          <h1 className="text-2xl sm:text-3xl">Polycystic Ovary Syndrome (PCOS)</h1>
           <p className="text-justify pr-5 pt-1">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, nemo! Velit repellendus hic commodi eos aliquid accusantium exercitationem obcaecati fuga, perspiciatis non 
-          </p>
+          PCOS is one of the most common hormonal disorders affecting young women. It leads to irregular periods, excessive hair growth, acne, weight gain, and infertility. The root cause? A hormonal imbalance that affects ovulation and metabolism. Left untreated, PCOS can increase the risk of diabetes, heart disease, and depression. Treatment includes lifestyle changes, birth control pills, and medications like Metformin to manage symptoms. If you experience persistent acne, irregular cycles, or unexplained weight gain—it’s time to check for PCOS!          </p>
           </div>
         </div>
         
