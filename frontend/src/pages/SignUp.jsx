@@ -4,6 +4,8 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
+import { axiosInstance } from "../lib/axios.js";
+
 const SignUp = () => {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
@@ -25,7 +27,8 @@ const SignUp = () => {
     try {
       setLoading(true);
       console.log(fullName, email, password, age, profession, bio);
-      const { data } = await axios.post('http://localhost:5000/api/auth/signup', {
+
+      const { data } = await axiosInstance.post('/auth/signup', {
         fullName,
         email,
         password,
