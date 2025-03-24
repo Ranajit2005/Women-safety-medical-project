@@ -3,17 +3,22 @@ import { Loader2 } from "lucide-react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { useAuthStore } from "../store/useAuthStore.js";
+
+import { axiosInstance } from "../lib/axios.js";
 
 const SignUp = () => {
+
+  const { isSigningUp, signup } = useAuthStore();
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [age, setAge] = useState("");
   const [profession, setProfession] = useState("");
   const [bio, setBio] = useState("");
-  const [isLoading, setLoading] = useState(false);
+  //const [isLoading, setLoading] = useState(false);
 
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
 
   const {
     register,
@@ -21,34 +26,44 @@ const SignUp = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = async () => {
-    try {
-      setLoading(true);
-      console.log(fullName, email, password, age, profession, bio);
-      const { data } = await axios.post('http://localhost:5000/api/auth/signup', {
-        fullName,
-        email,
-        password,
-        age,
-        profession,
-        bio
-      });
+  const onSubmit = () => {
+    // try {
+    //   setLoading(true);
+    //   console.log(fullName, email, password, age, profession, bio);
 
-      console.log(data);
-      console.log(data.success);
+    //   const { data } = await axiosInstance.post('/auth/signup', {
+    //     fullName,
+    //     email,
+    //     password,
+    //     age,
+    //     profession,
+    //     bio
+    //   });
 
-      setLoading(false);
-      navigate('/');
+    //   console.log(data);
+    //   console.log(data.success);
 
-    } catch (error) {
-      console.log(error);
+    //   setLoading(false);
+    //   navigate('/');
+
+    // } catch (error) {
+    //   console.log(error);
+    // }
+    const data = {
+      fullName,
+      email,
+      password,
+      age,
+      profession,
+      bio
     }
+    signup(data);
   };
 
   return (
 
     <>
-      {isLoading && (
+      {isSigningUp && (
         <div className="absolute inset-0 w-full h-full bg-black opacity-30 z-50">
           <div className="flex justify-center items-center h-full">
             <Loader2 className="animate-spin text-sky-600" />
@@ -181,7 +196,7 @@ const SignUp = () => {
           <button
             type="submit"
             className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition"
-            disabled={isLoading}
+            disabled={isSigningUp}
           >
             Sign Up
           </button>

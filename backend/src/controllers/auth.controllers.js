@@ -4,7 +4,7 @@ import { generateToken } from "../lib/utils.js";
 
 
 const signup = async (req, res) => {
-    const { fullName, email, password, age, profession, bio} = req.body;
+    const { fullName, email, password, age, profession, bio } = req.body;
     try {
         // if (!fullName || !email || !password) {
         //     return res.status(400).json({ message: "Please fill all the fields" });
@@ -15,7 +15,7 @@ const signup = async (req, res) => {
         const user = await User.findOne({ email });
 
         if (user) {
-            return res.status(400).json({ 
+            return res.status(400).json({
                 message: "User already exists",
                 success: false
             });
@@ -47,14 +47,14 @@ const signup = async (req, res) => {
 
         }
         else {
-            return res.status(400).json({ 
+            return res.status(400).json({
                 message: "Something went wrong",
                 success: false
             });
         }
 
     } catch (error) {
-        return res.status(400).json({ 
+        return res.status(400).json({
             message: "Something went wrong in signup",
             success: false
         });
@@ -69,7 +69,7 @@ const login = async (req, res) => {
     try {
         const user = await User.findOne({ email });
         if (!user) {
-            return res.status(400).json({ 
+            return res.status(400).json({
                 message: "User does not exist",
                 success: false
             });
@@ -77,7 +77,7 @@ const login = async (req, res) => {
 
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) {
-            return res.status(400).json({ 
+            return res.status(400).json({
                 message: "Invalid credentials",
                 success: false
             });
@@ -94,7 +94,7 @@ const login = async (req, res) => {
         });
 
     } catch (error) {
-        return res.status(500).json({ 
+        return res.status(500).json({
             message: "Internal server error in login",
             success: false
         });
@@ -118,5 +118,15 @@ const logout = async (req, res) => {
     }
 }
 
+const checkAuth = (req, res) => {
+    try {
+        return res.status(200).json({ user: req.user });
+    } catch (error) {
+        console.log(error);
 
-export { signup, login, logout };
+        return res.status(500).json({ message: "Internal server error" });
+    }
+}
+
+
+export { signup, login, logout, checkAuth };

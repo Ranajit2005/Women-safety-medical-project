@@ -3,14 +3,19 @@ import { Loader2 } from "lucide-react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { useAuthStore } from "../store/useAuthStore.js";
+
+import { axiosInstance } from "../lib/axios.js";
 
 const LogIn = () => {
 
+
+  const { login, isLoggingIn } = useAuthStore();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isLoading, setLoading] = useState(false);
+  //const [isLoading, setLoading] = useState(false);
 
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
 
   const {
     register,
@@ -18,30 +23,35 @@ const LogIn = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = async () => {
-    try {
-      setLoading(true);
-      console.log(email, password,);
-      const { data } = await axios.post('http://localhost:5000/api/auth/login', {
-        email,
-        password,
-      });
+  const onSubmit = () => {
+    // try {
+    //   setLoading(true);
+    //   console.log(email, password,);
 
-      console.log(data);
+    //   const { data } = await axiosInstance.post('/auth/login', {
+    //     email,
+    //     password,
+    //   });
 
-      setLoading(false);
-      navigate('/');
+    //   console.log(data);
+    //   //login({ email, password });
 
-    } catch (error) {
-      console.log(error);
-      setLoading(false);
-    }
+    //   setLoading(false);
+    //   navigate('/');
+
+    // } catch (error) {
+    //   console.log(error);
+    //   setLoading(false);
+    // }
+    const data = { email, password };
+    login(data);
+
   };
 
   return (
 
     <>
-      {isLoading && (
+      {isLoggingIn && (
         <div className="absolute inset-0 w-full h-full bg-black opacity-30 z-50">
           <div className="flex justify-center items-center h-full">
             <Loader2 className="animate-spin text-sky-600" />
@@ -115,7 +125,7 @@ const LogIn = () => {
           <button
             type="submit"
             className="w-full bg-blue-500 text-white mt-5 p-2 rounded hover:bg-blue-600 transition"
-            disabled={isLoading}
+            disabled={isLoggingIn}
           >
             Log In
           </button>
