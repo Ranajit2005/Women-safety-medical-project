@@ -1,24 +1,22 @@
-// import axios from "axios";
+import React, { useState } from 'react'
+import { useAuthStore } from '../store/useAuthStore.js'
 import { Loader2 } from "lucide-react";
-import { useState } from "react";
 import { useForm } from "react-hook-form";
-// import { useNavigate } from "react-router-dom";
-import { useAuthStore } from "../store/useAuthStore.js";
+// import { axiosInstance } from '../lib/axios.js';
+import { useNavigate } from "react-router-dom";
 
-// import { axiosInstance } from "../lib/axios.js";
 
-const SignUp = () => {
+const ProfileUpdate = () => {
 
-  const { isSigningUp, signup } = useAuthStore();
-  const [fullName, setFullName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [age, setAge] = useState("");
-  const [profession, setProfession] = useState("");
-  const [bio, setBio] = useState("");
-  //const [isLoading, setLoading] = useState(false);
+  const { updateProfile, authUser, isUpdateProfile } = useAuthStore();
 
-  //const navigate = useNavigate();
+  const [fullName, setFullName] = useState(authUser.fullName);
+  const [email, setEmail] = useState(authUser.email);
+  // const [password, setPassword] = useState();
+  const [age, setAge] = useState(authUser.age);
+  const [profession, setProfession] = useState(authUser.profession);
+  const [bio, setBio] = useState(authUser.bio);
+  //const [loading, setLoading] = useState(false)
 
   const {
     register,
@@ -26,44 +24,40 @@ const SignUp = () => {
     formState: { errors },
   } = useForm();
 
+  const navigate = useNavigate();
+
+  // console.log("---------------->",authUser._id,fullName,email,age,profession,bio);
+
   const onSubmit = () => {
+    // console.log("--->", fullName, email, age, profession, bio);
     // try {
     //   setLoading(true);
-    //   console.log(fullName, email, password, age, profession, bio);
-
-    //   const { data } = await axiosInstance.post('/auth/signup', {
+    //   const { data } = await axiosInstance.post('/auth/updateProfile', {
+    //     userId: authUser._id,
     //     fullName,
     //     email,
-    //     password,
     //     age,
     //     profession,
     //     bio
-    //   });
+    //   })
 
     //   console.log(data);
-    //   console.log(data.success);
-
     //   setLoading(false);
     //   navigate('/');
 
     // } catch (error) {
-    //   console.log(error);
+    //   console.log("error in updating profile", error);
     // }
-    const data = {
-      fullName,
-      email,
-      password,
-      age,
-      profession,
-      bio
-    }
-    signup(data);
-  };
+    const data = { userId: authUser._id, fullName, email, age, profession, bio }
+    updateProfile(data);
+    navigate('/');
+
+  }
+
 
   return (
-
     <>
-      {isSigningUp && (
+      {isUpdateProfile && (
         <div className="absolute inset-0 w-full h-full bg-black opacity-30 z-50">
           <div className="flex justify-center items-center h-full">
             <Loader2 className="animate-spin text-sky-600" />
@@ -74,16 +68,16 @@ const SignUp = () => {
       {/* Background Image with Opacity */}
       <div
         className="fixed inset-0 w-full h-full bg-cover bg-center opacity-50"
-        style={{ backgroundImage: `url('/bg/bg2.webp')` }}
+        style={{ backgroundImage: `url('/bg/bg3.jpg')` }}
       ></div>
 
-      <div className="flex justify-center items-center h-screen relative mx-3 sm:mx-0 top-10 sm:top-10 pt-16">
+      <div className="flex justify-center items-center h-screen relative mx-3 sm:mx-0 top-10 pt-10 ">
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="bg-[#f542b0] text-black p-4 sm:p-8 rounded-lg shadow-lg w-80 sm:w-96"
         >
           <h2 className="text-2xl font-bold mb-6 text-gray-800 text-center">
-            Sign Up
+            Upadate Profile
           </h2>
 
           {/* Full Name Field */}
@@ -93,6 +87,7 @@ const SignUp = () => {
               type="text"
               {...register("fullName", { required: "Full Name is required" })}
               className="w-full p-2 border border-gray-300 rounded mt-1 bg-purple-200"
+              placeholder={fullName}
               onChange={(e) => setFullName(e.target.value)}
             />
             {errors.fullName && (
@@ -115,6 +110,7 @@ const SignUp = () => {
                 },
               })}
               className="w-full p-2 border border-gray-300 rounded mt-1 bg-purple-200"
+              placeholder={email}
               onChange={(e) => setEmail(e.target.value)}
             />
             {errors.email && (
@@ -124,27 +120,6 @@ const SignUp = () => {
             )}
           </div>
 
-          {/* Password Field */}
-          <div className="mb-1">
-            <label className="block text-gray-700">Password</label>
-            <input
-              type="password"
-              {...register("password", {
-                required: "Password is required",
-                minLength: {
-                  value: 6,
-                  message: "Password must be at least 6 characters long",
-                },
-              })}
-              className="w-full p-2 border border-gray-300 rounded mt-1 bg-purple-100"
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            {errors.password && (
-              <p className="text-red-500 text-sm mt-1">
-                {errors.password.message}
-              </p>
-            )}
-          </div>
 
           {/* Age Field */}
           <div className="mb-1">
@@ -156,6 +131,7 @@ const SignUp = () => {
                 min: { value: 0, message: "Give a valid age" },
               })}
               className="w-full p-2 border border-gray-300 rounded mt-1 bg-purple-100"
+              placeholder={age}
               onChange={(e) => setAge(e.target.value)}
             />
             {errors.age && (
@@ -170,6 +146,7 @@ const SignUp = () => {
               type="text"
               {...register("profession")}
               className="w-full p-2 border border-gray-300 rounded mt-1 bg-purple-50"
+              placeholder={profession}
               onChange={(e) => setProfession(e.target.value)}
             />
             {errors.fullName && (
@@ -185,6 +162,7 @@ const SignUp = () => {
             <textarea
               {...register("bio")}
               className="w-full p-2 border border-gray-300 rounded mt-1"
+              placeholder={bio}
               onChange={(e) => setBio(e.target.value)}
             />
             {errors.bio && (
@@ -196,15 +174,16 @@ const SignUp = () => {
           <button
             type="submit"
             className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition"
-            disabled={isSigningUp}
+            disabled={isUpdateProfile}
           >
-            Sign Up
+            Update Profile
           </button>
-          <p className="text-center text-gray-600 mt-4">Already have an account? <a href="/login" className="text-blue-700 hover:underline">Log in</a></p>
+          <p className="text-center text-gray-600 mt-4">Already update <a href="/" className="text-blue-700 hover:underline">HOME</a></p>
         </form>
+        
       </div>
     </>
-  );
-};
+  )
+}
 
-export default SignUp;
+export default ProfileUpdate;

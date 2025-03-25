@@ -3,10 +3,14 @@ import ScrollableItems from "../components/ScrollableItems";
 import Circle from "../components/Circle";
 import Landing from "../components/Landing";
 import Card from "../components/Card";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 
 const Home = () => {
   return (
     <div className="bg-pink-200 mt-3 pb-3 sm:pb-5">
+
+        <Navbar/>
 
         {/* 1st section */}
       <div className="mt-6 sm:mt-0 shadow-lg">
@@ -43,7 +47,7 @@ const Home = () => {
             </div>
         </div>
 
-
+        <Footer/>
     </div>
   );
 };

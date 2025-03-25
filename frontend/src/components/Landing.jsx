@@ -62,7 +62,7 @@ const AnimatedEntrance = () => {
             variants={linesVariants}
           >
             <motion.div 
-              className="h-1 bg-blue-500 w-full"
+              className="h-1 bg-pink-500 w-full"
               variants={linesVariants}
             />
             <motion.h1 
@@ -72,7 +72,7 @@ const AnimatedEntrance = () => {
               I am safe
             </motion.h1>
             <motion.div 
-              className="h-1 bg-blue-500 w-3/4"
+              className="h-1 bg-pink-500 w-3/4"
               variants={linesVariants}
             />
             <motion.p 
@@ -80,27 +80,27 @@ const AnimatedEntrance = () => {
               variants={linesVariants}
             >
               This is our website for women safety and good wells
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam, mollitia eaque iste fuga fugit recusandae hic neque ut enim animi consectetur, nemo dolore vitae, velit cupiditate illum. Consectetur voluptatum facere vel quas hic. Explicabo ipsam consequuntur unde fugit blanditiis, repellat cumque dicta ullam, facilis eveniet, atque reiciendis nisi quis aliquid?
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam, mollitia eaque iste fuga fugit recusandae hic neque ut enim animi consectetur, nemo dolore vitae, velit cupiditate illum. 
             </motion.p>
-            {/* <motion.div 
-              className="h-1 bg-blue-500 w-1/2"
+            <motion.div 
+              className="h-1 bg-pink-500 w-1/2"
               variants={linesVariants}
-            /> */}
-            {/* <motion.button
-              className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
+            />
+            <motion.button
+              className="px-6 py-3 bg-pink-400 text-white rounded-lg hover:bg-pink-500 transition"
               variants={linesVariants}
             >
-              Get Started
-            </motion.button> */}
+              <a href="/profile" className=" ">Edit Profile</a>
+            </motion.button>
           </motion.div>
 
           {/* Right side - Image */}
           <motion.div 
-            className="lg:w-1/2 shadow-[4px_4px_10px_rgba(0,0,0,0.3)] rounded-xl"
+            className="my-auto lg:w-1/2 shadow-[4px_4px_10px_rgba(0,0,0,0.3)] rounded-xl"
             variants={imageVariants}
           >
             <motion.img
-              src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+              src="/bg/bg1.jpg"
               alt="Feature illustration"
               className="w-full h-auto rounded-xl shadow-xl"
               variants={imageVariants}

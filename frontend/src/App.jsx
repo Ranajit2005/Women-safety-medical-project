@@ -9,6 +9,7 @@ import { useAuthStore } from './store/useAuthStore.js'
 
 import { Loader } from 'lucide-react'
 import Footer from './components/Footer.jsx'
+import ProfileUpdate from './pages/ProfileUpdate.jsx'
 
 
 
@@ -33,14 +34,15 @@ function App() {
   return (
     <div>
 
-      <Navbar />
+      {/* <Navbar /> */}
       <Routes>
         <Route path="/" element={authUser ? <Home /> : <Navigate to="login" />} />
         <Route path="/login" element={!authUser ? <LogIn /> : <Navigate to="/" />} />
         <Route path="/signup" element={!authUser ? <SignUp /> : <Navigate to="/" />} />
+        <Route path="/profile" element={authUser ? <ProfileUpdate /> : <Navigate to="login" />}/>
       </Routes>
 
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   )
 }
