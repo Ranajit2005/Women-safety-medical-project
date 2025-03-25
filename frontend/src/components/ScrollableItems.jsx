@@ -38,14 +38,13 @@ const AutoScrollBox = () => {
         {/* Item 1 (with measurement ref) */}
         <div
           ref={itemRef}
-          className={`bg-purple-500 grid grid-cols-1 sm:grid-cols-2 text-white rounded-lg h-72 overflow-auto ${itemStyle} shadow-lg`}
+          className={`bg-purple-500  text-white rounded-lg h-72 overflow-auto ${itemStyle} shadow-lg`}
         >
           
           <div className="flex flex-col pl-1 pt-3 sm:pl-5">
-            <h1 className="text-2xl sm:text-3xl">abc</h1>
+            <h1 className="pb-3 text-2xl sm:text-3xl">❌ Myth #1: "You Can’t Get Pregnant During Your Period."</h1>
             <p className="text-justify pr-5 pt-1">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit...
-            </p>
+            ✅ Truth: Yes, you can! Sperm can live up to 5 days, and early ovulation can lead to pregnancy—even right after your period ends. Always use protection!         </p>
           </div>
         </div>
 
