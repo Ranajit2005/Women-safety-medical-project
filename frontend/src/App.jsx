@@ -34,7 +34,7 @@ function App() {
   return (
     <div>
 
-      <Navbar />
+      {/* <Navbar /> */}
       <Routes>
         <Route path="/" element={authUser ? <Home /> : <Navigate to="login" />} />
         <Route path="/login" element={!authUser ? <LogIn /> : <Navigate to="/" />} />
@@ -42,7 +42,7 @@ function App() {
         <Route path="/profile" element={authUser ? <ProfileUpdate /> : <Navigate to="login" />}/>
       </Routes>
 
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   )
 }

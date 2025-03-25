@@ -62,7 +62,7 @@ const LogIn = () => {
       {/* Background Image with Opacity */}
       <div
         className="fixed inset-0 w-full h-full bg-cover bg-center opacity-50"
-        style={{ backgroundImage: `url('/backgroundSignUp.jpg')` }}
+        style={{ backgroundImage: `url('/bg/bg3.jpg')` }}
       ></div>
 
       <div className="flex justify-center items-center h-screen relative mx-3 sm:mx-0 top-10 pt-10 ">

@@ -2,10 +2,8 @@ import React, { useState } from 'react'
 import { useAuthStore } from '../store/useAuthStore.js'
 import { Loader2 } from "lucide-react";
 import { useForm } from "react-hook-form";
-import { axiosInstance } from '../lib/axios.js';
+// import { axiosInstance } from '../lib/axios.js';
 import { useNavigate } from "react-router-dom";
-
-
 
 
 const ProfileUpdate = () => {
@@ -70,7 +68,7 @@ const ProfileUpdate = () => {
       {/* Background Image with Opacity */}
       <div
         className="fixed inset-0 w-full h-full bg-cover bg-center opacity-50"
-        style={{ backgroundImage: `url('/background 1.webp')` }}
+        style={{ backgroundImage: `url('/bg/bg3.jpg')` }}
       ></div>
 
       <div className="flex justify-center items-center h-screen relative mx-3 sm:mx-0 top-10 pt-10 ">
@@ -180,11 +178,12 @@ const ProfileUpdate = () => {
           >
             Update Profile
           </button>
-          {/* <p className="text-center text-gray-600 mt-4">Already have an account? <a href="/login" className="text-blue-700 hover:underline">Log in</a></p> */}
+          <p className="text-center text-gray-600 mt-4">Already update <a href="/" className="text-blue-700 hover:underline">HOME</a></p>
         </form>
+        
       </div>
     </>
   )
 }
 
-export default ProfileUpdate
+export default ProfileUpdate;
