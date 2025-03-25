@@ -102,6 +102,20 @@ const login = async (req, res) => {
 }
 
 
+const updateProfle = async (req, res) => {
+    try{
+     const { userId, fullName, email, age, profession, bio } = req.body;
+    await User.findByIdAndUpdate(
+        userId,
+        { $set: { fullName, email, age, profession, bio } },
+    )
+        
+    
+    }catch(error){
+
+    }
+}
+
 const logout = async (req, res) => {
     const val1 = process.env.OPERATION === "production";
     const val2 = process.env.OPERATION === "production" ? "None" : "Lax";
@@ -129,4 +143,4 @@ const checkAuth = (req, res) => {
 }
 
 
-export { signup, login, logout, checkAuth };
+export { signup, login, logout, checkAuth,updateProfle };
