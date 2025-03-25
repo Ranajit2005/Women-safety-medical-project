@@ -102,17 +102,29 @@ const login = async (req, res) => {
 }
 
 
-const updateProfle = async (req, res) => {
-    try{
-     const { userId, fullName, email, age, profession, bio } = req.body;
-    await User.findByIdAndUpdate(
-        userId,
-        { $set: { fullName, email, age, profession, bio } },
-    )
-        
-    
-    }catch(error){
+const updateProfile = async (req, res) => {
+    try {
+        const { userId, fullName, email, age, profession, bio } = req.body;
+        const user = await User.findByIdAndUpdate(
+            userId,
+            { $set: { fullName, email, age, profession, bio } },
+        )
 
+        return res.status(200).json({
+            message: "User updated successfully",
+            success: true,
+            _id: user._id,
+            fullName: user.fullName,
+            email: user.email,
+            createdAt: user.createdAt,
+        });
+
+
+    } catch (error) {
+        return res.status(500).json({
+            message: "Internal server error in updating profile",
+            success: false
+        });
     }
 }
 
@@ -143,4 +155,4 @@ const checkAuth = (req, res) => {
 }
 
 
-export { signup, login, logout, checkAuth,updateProfle };
+export { signup, login, logout, checkAuth, updateProfile };

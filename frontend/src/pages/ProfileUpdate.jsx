@@ -10,53 +10,56 @@ import { useNavigate } from "react-router-dom";
 
 const ProfileUpdate = () => {
 
-    const { checkAuth, isCheckingAuth, authUser } = useAuthStore();
+  const { updateProfile, authUser, isUpdateProfile } = useAuthStore();
 
-    const [fullName, setFullName] = useState(authUser.fullName);
-    const [email, setEmail] = useState(authUser.email);
-    // const [password, setPassword] = useState();
-    const [age, setAge] = useState(authUser.age);
-    const [profession, setProfession] = useState(authUser.profession);
-    const [bio, setBio] = useState(authUser.bio);
-    const [loading,setLoading] = useState(false)
+  const [fullName, setFullName] = useState(authUser.fullName);
+  const [email, setEmail] = useState(authUser.email);
+  // const [password, setPassword] = useState();
+  const [age, setAge] = useState(authUser.age);
+  const [profession, setProfession] = useState(authUser.profession);
+  const [bio, setBio] = useState(authUser.bio);
+  //const [loading, setLoading] = useState(false)
 
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-    } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    // console.log("---------------->",authUser._id,fullName,email,age,profession,bio);
+  // console.log("---------------->",authUser._id,fullName,email,age,profession,bio);
 
-    const onSubmit = async () => {
-        console.log("--->",fullName,email,age,profession,bio);
-        try {
-            setLoading(true);
-            const { data } = await axiosInstance.post('/auth/updateProfle', {
-                userId: authUser._id,
-                fullName,
-                email,
-                age,
-                profession,
-                bio
-            })
-    
-            console.log(data);
-            setLoading(false);
-            navigate('/');
+  const onSubmit = () => {
+    // console.log("--->", fullName, email, age, profession, bio);
+    // try {
+    //   setLoading(true);
+    //   const { data } = await axiosInstance.post('/auth/updateProfile', {
+    //     userId: authUser._id,
+    //     fullName,
+    //     email,
+    //     age,
+    //     profession,
+    //     bio
+    //   })
 
-        } catch (error) {
-            console.log(error)
-        }
+    //   console.log(data);
+    //   setLoading(false);
+    //   navigate('/');
 
-    }
+    // } catch (error) {
+    //   console.log("error in updating profile", error);
+    // }
+    const data = { userId: authUser._id, fullName, email, age, profession, bio }
+    updateProfile(data);
+    navigate('/');
+
+  }
 
 
   return (
     <>
-      {loading && (
+      {isUpdateProfile && (
         <div className="absolute inset-0 w-full h-full bg-black opacity-30 z-50">
           <div className="flex justify-center items-center h-full">
             <Loader2 className="animate-spin text-sky-600" />
@@ -161,7 +164,7 @@ const ProfileUpdate = () => {
             <textarea
               {...register("bio")}
               className="w-full p-2 border border-gray-300 rounded mt-1"
-                placeholder={bio}
+              placeholder={bio}
               onChange={(e) => setBio(e.target.value)}
             />
             {errors.bio && (
@@ -173,7 +176,7 @@ const ProfileUpdate = () => {
           <button
             type="submit"
             className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition"
-            disabled={loading}
+            disabled={isUpdateProfile}
           >
             Update Profile
           </button>
