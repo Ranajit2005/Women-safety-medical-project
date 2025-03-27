@@ -10,6 +10,8 @@ import { useAuthStore } from './store/useAuthStore.js'
 import { Loader } from 'lucide-react'
 import Footer from './components/Footer.jsx'
 import ProfileUpdate from './pages/ProfileUpdate.jsx'
+import ArticlePage from './pages/ArticlePage.jsx'
+import PostForm from './pages/PostForm.jsx'
 
 
 
@@ -40,6 +42,8 @@ function App() {
         <Route path="/login" element={!authUser ? <LogIn /> : <Navigate to="/" />} />
         <Route path="/signup" element={!authUser ? <SignUp /> : <Navigate to="/" />} />
         <Route path="/profile" element={authUser ? <ProfileUpdate /> : <Navigate to="login" />}/>
+        <Route path="/article" element={authUser ? <ArticlePage /> : <Navigate to="login" />}/>
+        <Route path="/form" element={authUser ? <PostForm /> : <Navigate to="login" />}/>
       </Routes>
 
       {/* <Footer/> */}
