@@ -29,25 +29,6 @@ const ProfileUpdate = () => {
   // console.log("---------------->",authUser._id,fullName,email,age,profession,bio);
 
   const onSubmit = () => {
-    // console.log("--->", fullName, email, age, profession, bio);
-    // try {
-    //   setLoading(true);
-    //   const { data } = await axiosInstance.post('/auth/updateProfile', {
-    //     userId: authUser._id,
-    //     fullName,
-    //     email,
-    //     age,
-    //     profession,
-    //     bio
-    //   })
-
-    //   console.log(data);
-    //   setLoading(false);
-    //   navigate('/');
-
-    // } catch (error) {
-    //   console.log("error in updating profile", error);
-    // }
     const data = { userId: authUser._id, fullName, email, age, profession, bio }
     updateProfile(data);
     navigate('/');
@@ -180,7 +161,7 @@ const ProfileUpdate = () => {
           </button>
           <p className="text-center text-gray-600 mt-4">Already update <a href="/" className="text-blue-700 hover:underline">HOME</a></p>
         </form>
-        
+
       </div>
     </>
   )

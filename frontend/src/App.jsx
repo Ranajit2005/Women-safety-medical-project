@@ -6,6 +6,7 @@ import LogIn from './pages/LogIn'
 import Home from './pages/Home'
 import { useEffect } from 'react'
 import { useAuthStore } from './store/useAuthStore.js'
+import { useArticleStore } from './store/useArticleStore.js'
 
 import { Loader } from 'lucide-react'
 import Footer from './components/Footer.jsx'
@@ -19,9 +20,14 @@ import PostForm from './pages/PostForm.jsx'
 function App() {
 
   const { checkAuth, isCheckingAuth, authUser } = useAuthStore();
+  const { fetchArticle } = useArticleStore();
   useEffect(() => {
     checkAuth();
   }, [checkAuth]);
+
+  useEffect(() => {
+    fetchArticle();
+  }, [fetchArticle]);
 
 
   if (isCheckingAuth && !authUser) {
@@ -41,9 +47,9 @@ function App() {
         <Route path="/" element={authUser ? <Home /> : <Navigate to="login" />} />
         <Route path="/login" element={!authUser ? <LogIn /> : <Navigate to="/" />} />
         <Route path="/signup" element={!authUser ? <SignUp /> : <Navigate to="/" />} />
-        <Route path="/profile" element={authUser ? <ProfileUpdate /> : <Navigate to="login" />}/>
-        <Route path="/article" element={authUser ? <ArticlePage /> : <Navigate to="login" />}/>
-        <Route path="/form" element={authUser ? <PostForm /> : <Navigate to="login" />}/>
+        <Route path="/profile" element={authUser ? <ProfileUpdate /> : <Navigate to="login" />} />
+        <Route path="/article" element={authUser ? <ArticlePage /> : <Navigate to="login" />} />
+        <Route path="/form" element={authUser ? <PostForm /> : <Navigate to="login" />} />
       </Routes>
 
       {/* <Footer/> */}
