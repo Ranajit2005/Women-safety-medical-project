@@ -21,6 +21,12 @@ const articleSchema = new mongoose.Schema({
     doctorName:{
         type:String,
         required: true
+    },
+    image:{
+        type:String,
+    },
+    public_id:{
+        type:String,
     }
 })
 
