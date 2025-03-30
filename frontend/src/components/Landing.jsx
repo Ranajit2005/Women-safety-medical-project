@@ -69,7 +69,7 @@ const AnimatedEntrance = () => {
               className="text-4xl md:text-5xl font-bold text-gray-800"
               variants={linesVariants}
             >
-              I am safe
+              Soft Whispers of Care, Just for You🌸
             </motion.h1>
             <motion.div 
               className="h-1 bg-pink-500 w-3/4"
@@ -79,8 +79,7 @@ const AnimatedEntrance = () => {
               className="text-sm sm:text-lg text-gray-600"
               variants={linesVariants}
             >
-              This is our website for women safety and good wells
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam, mollitia eaque iste fuga fugit recusandae hic neque ut enim animi consectetur, nemo dolore vitae, velit cupiditate illum. 
+              Your body tells a story—one that deserves to be heard, understood, and cared for. From puberty to menopause, we provide knowledge, support, and guidance for every stage of womanhood. Break the silence, embrace awareness, and take charge of your well-being. Because your health isn’t just important—it’s everything.  
             </motion.p>
             <motion.div 
               className="h-1 bg-pink-500 w-1/2"

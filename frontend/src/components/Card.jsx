@@ -37,37 +37,6 @@ const CardFlip = () => {
     </div>
 
 
-
-
-    <div className="flip-card">
-      <div className="flip-card-inner">
-        {/* Front Side (Image) */}
-        <div className="flip-card-front">
-          <img
-            src="Primary Ovarian Insufficiency (POI) (1).jpg"
-            alt="Card Front"
-            className="w-full h-full object-cover rounded-lg"
-          />
-        </div>
-
-        {/* Back Side (Text) */}
-        <div className="flip-card-back bg-pink-300 text-black p-4 rounded-lg flex items-center justify-center">
-          <div className="text-center">
-            <h2 className="text-xl font-bold mb-2">🔸 Primary Ovarian Insufficiency (POI)</h2>
-            <p className="text-sm text-justify">
-            🔹 What Happens? The ovaries stop functioning properly before the age of 40, leading to early menopause-like symptoms.<br/>
-🔹 Symptoms: Missed or irregular periods, hot flashes, night sweats, vaginal dryness, mood swings & infertility.<br/>
-🔹 Risks: Early estrogen loss can increase the risk of osteoporosis, heart disease & cognitive decline.<br/>
-🔹 Take Action: Hormone replacement therapy (HRT), lifestyle changes & fertility treatments may help in managing symptoms.          </p>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-
-
     <div className="flip-card">
       <div className="flip-card-inner">
         {/* Front Side (Image) */}
@@ -95,6 +64,32 @@ const CardFlip = () => {
       </div>
     </div>
 
+
+    <div className="flip-card">
+      <div className="flip-card-inner">
+        {/* Front Side (Image) */}
+        <div className="flip-card-front">
+          <img
+            src="Primary Ovarian Insufficiency (POI) (1).jpg"
+            alt="Card Front"
+            className="w-full h-full object-cover rounded-lg"
+          />
+        </div>
+
+        {/* Back Side (Text) */}
+        <div className="flip-card-back bg-pink-300 text-black p-4 rounded-lg flex items-center justify-center">
+          <div className="text-center">
+            <h2 className="text-xl font-bold mb-2">🔸 Primary Ovarian Insufficiency (POI)</h2>
+            <p className="text-sm text-justify">
+            🔹 What Happens? The ovaries stop functioning properly before the age of 40, leading to early menopause-like symptoms.<br/>
+🔹 Symptoms: Missed or irregular periods, hot flashes, night sweats, vaginal dryness, mood swings & infertility.<br/>
+🔹 Risks: Early estrogen loss can increase the risk of osteoporosis, heart disease & cognitive decline.<br/>
+🔹 Take Action: Hormone replacement therapy (HRT), lifestyle changes & fertility treatments may help in managing symptoms.          </p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
 
 
 
