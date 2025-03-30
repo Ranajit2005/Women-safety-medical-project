@@ -4,6 +4,7 @@ import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import { connectDB } from './lib/dbConnection.js';
 import authRouter from './routes/auth.route.js';
+import articleRouter from './routes/article.route.js';
 
 
 dotenv.config();
@@ -35,6 +36,8 @@ app.use(cors({
 
 //routes
 app.use('/api/auth', authRouter);
+
+app.use('/api/article', articleRouter);
 
 
 

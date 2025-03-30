@@ -53,7 +53,7 @@ const AutoScrollBox = () => {
 
         <div
           ref={itemRef}
-          className={`bg-purple-500 grid grid-cols-1 sm:grid-cols-2 text-white rounded-lg h-72 overflow-auto ${itemStyle} shadow-lg`}
+          className={`bg-purple-500 text-white rounded-lg h-72 overflow-auto ${itemStyle} shadow-lg`}
         >
           
           <div className="flex flex-col pl-1 pt-3 sm:pl-5">
@@ -71,7 +71,7 @@ const AutoScrollBox = () => {
 
         <div
           ref={itemRef}
-          className={`bg-purple-500 grid grid-cols-1 sm:grid-cols-2 text-white rounded-lg h-72 overflow-auto ${itemStyle} shadow-lg`}
+          className={`bg-purple-500 text-white rounded-lg h-72 overflow-auto ${itemStyle} shadow-lg`}
         >
           
           <div className="flex flex-col pl-1 pt-3 sm:pl-5">
@@ -88,7 +88,7 @@ const AutoScrollBox = () => {
 
         <div
           ref={itemRef}
-          className={`bg-purple-500 grid grid-cols-1 sm:grid-cols-2 text-white rounded-lg h-72 overflow-auto ${itemStyle} shadow-lg`}
+          className={`bg-purple-500 text-white rounded-lg h-72 overflow-auto ${itemStyle} shadow-lg`}
         >
           
           <div className="flex flex-col pl-1 pt-3 sm:pl-5">
@@ -106,7 +106,7 @@ const AutoScrollBox = () => {
 
         <div
           ref={itemRef}
-          className={`bg-purple-500 grid grid-cols-1 sm:grid-cols-2 text-white rounded-lg h-72 overflow-auto ${itemStyle} shadow-lg`}
+          className={`bg-purple-500 text-white rounded-lg h-72 overflow-auto ${itemStyle} shadow-lg`}
         >
           
           <div className="flex flex-col pl-1 pt-3 sm:pl-5">
@@ -123,7 +123,7 @@ const AutoScrollBox = () => {
 
         <div
           ref={itemRef}
-          className={`bg-purple-500 grid grid-cols-1 sm:grid-cols-2 text-white rounded-lg h-72 overflow-auto ${itemStyle} shadow-lg`}
+          className={`bg-purple-500 text-white rounded-lg h-72 overflow-auto ${itemStyle} shadow-lg`}
         >
           
           <div className="flex flex-col pl-1 pt-3 sm:pl-5">
