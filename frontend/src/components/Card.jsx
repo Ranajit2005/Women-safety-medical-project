@@ -14,7 +14,7 @@ const CardFlip = () => {
         {/* Front Side (Image) */}
         <div className="flip-card-front">
           <img
-            src="/Diseases/PCOS.png.png"
+            src="PCOS (1).jpg"
             alt="Card Front"
             className="w-full h-full object-cover rounded-lg"
           />
@@ -44,7 +44,7 @@ const CardFlip = () => {
         {/* Front Side (Image) */}
         <div className="flip-card-front">
           <img
-            src="/Ovarian-Cancer.jpg"
+            src="Primary Ovarian Insufficiency (POI) (1).jpg"
             alt="Card Front"
             className="w-full h-full object-cover rounded-lg"
           />
@@ -73,7 +73,7 @@ const CardFlip = () => {
         {/* Front Side (Image) */}
         <div className="flip-card-front">
           <img
-            src="/backgroundSignUp.jpg"
+            src="Endometriosis (1).jpg"
             alt="Card Front"
             className="w-full h-full object-cover rounded-lg"
           />
@@ -104,7 +104,7 @@ const CardFlip = () => {
         {/* Front Side (Image) */}
         <div className="flip-card-front">
           <img
-            src="/backgroundSignUp.jpg"
+            src="Cervical Cancer (1).jpg"
             alt="Card Front"
             className="w-full h-full object-cover rounded-lg"
           />
@@ -135,7 +135,7 @@ const CardFlip = () => {
         {/* Front Side (Image) */}
         <div className="flip-card-front">
           <img
-            src="/backgroundSignUp.jpg"
+            src="Breast Cancer (1).jpg"
             alt="Card Front"
             className="w-full h-full object-cover rounded-lg"
           />
@@ -166,7 +166,7 @@ const CardFlip = () => {
         {/* Front Side (Image) */}
         <div className="flip-card-front">
           <img
-            src="/backgroundSignUp.jpg"
+            src="Osteoporosis (1).jpg"
             alt="Card Front"
             className="w-full h-full object-cover rounded-lg"
           />
@@ -197,7 +197,7 @@ const CardFlip = () => {
         {/* Front Side (Image) */}
         <div className="flip-card-front">
           <img
-            src="/backgroundSignUp.jpg"
+            src="Ovarian Cancer (1).jpg"
             alt="Card Front"
             className="w-full h-full object-cover rounded-lg"
           />
@@ -229,7 +229,7 @@ const CardFlip = () => {
         {/* Front Side (Image) */}
         <div className="flip-card-front">
           <img
-            src="/backgroundSignUp.jpg"
+            src="Pelvic Organ Prolapse (1).jpg"
             alt="Card Front"
             className="w-full h-full object-cover rounded-lg"
           />
