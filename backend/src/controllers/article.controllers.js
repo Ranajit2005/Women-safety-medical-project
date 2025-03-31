@@ -1,5 +1,6 @@
 import { connectDB } from '../lib/dbConnection.js';
 import Article from '../models/article.model.js';
+import { v2 as cloudinary } from 'cloudinary';
 
 const getAllArticles = async (req, res) => {
     try {
@@ -23,7 +24,7 @@ const addArticle = async (req, res) => {
     try {
         const { title, content, userId, doctorName, image, public_id } = req.body;
 
-        const article = await Article.create({
+        await Article.create({
             title,
             content,
             userId,
@@ -47,25 +48,23 @@ const addArticle = async (req, res) => {
 
 const deleteArticle = async (req, res) => {
 
-    // cloudinary.config({ 
-    //     cloud_name: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
-    //     api_key: process.env.CLOUDINARY_API_KEY,
-    //     api_secret: process.env.CLOUDINARY_API_SECRET
-    // });
+    cloudinary.config({ 
+        cloud_name: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
+        api_key: process.env.CLOUDINARY_API_KEY,
+        api_secret: process.env.CLOUDINARY_API_SECRET
+    });
 
     try {
 
-        connectDB();
+        await connectDB();
 
-        const { postId, publicId } = req.body;
+        const { postId, publicId } = await req.body;
 
         console.log("Post Id", postId, "Public Id", publicId);
 
-        // if(publicId!="") await cloudinary.uploader.destroy(publicId);
+        if(publicId!="") await cloudinary.uploader.destroy(publicId);
 
         const article = await Article.findByIdAndDelete(postId);
-
-        console.log("Article deleted", article);
 
         if (!article) {
             return res.status(404).json({
@@ -80,7 +79,7 @@ const deleteArticle = async (req, res) => {
         });
 
     } catch (error) {
-        
+
         console.error("Cloudinary Deletion Error:", error);
 
         return res.status(400).json({
