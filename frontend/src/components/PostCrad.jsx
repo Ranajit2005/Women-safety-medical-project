@@ -10,9 +10,9 @@ const PostCard = ({
   date,
   userId,
 }) => {
-  console.log("Userid is : ", userId);
+//   console.log("Userid is : ", userId);
   const { authUser } = useAuthStore();
-  console.log("authUser:", authUser._id);
+//   console.log("authUser:", authUser._id);
 
   const onDelete = async () => {
     console.log("Delete button clicked");
