@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Trash2 } from "lucide-react";
 import { useAuthStore } from "../store/useAuthStore";
+import { axiosInstance } from "../lib/axios";
 
 const PostCard = ({
   doctorName,
@@ -9,24 +10,58 @@ const PostCard = ({
   image,
   date,
   userId,
+  postId,
+  publicId
 }) => {
 //   console.log("Userid is : ", userId);
   const { authUser } = useAuthStore();
+  const [loading, setLoading] = useState(false);
 //   console.log("authUser:", authUser._id);
 
   const onDelete = async () => {
     console.log("Delete button clicked");
+    console.log("Post Id",postId,"Public Id", publicId);
+
+    try {
+        setLoading(true);
+        const { data } = await axiosInstance.delete("/article/delete", {
+            postId, publicId
+        })
+
+        console.log("Post deleted successfully:", data);
+
+
+        setLoading(false);
+
+    } catch (error) {
+        console.log("Error deleting post:", error);
+    }
+
+
+
   }
 
   return (
-    <div className="m-3 p-3 sm:m-5 sm:p-5 flex flex-col sm:flex-row border border-gray-200 rounded-lg overflow-hidden mb-5 bg-pink-300 shadow-sm hover:shadow-md transition-shadow relative">
+
+    <>
+    {loading && (
+            <div className="absolute inset-0 w-full h-full bg-black opacity-30 z-50">
+              <div className="flex justify-center items-center h-full">
+                <Loader2 className="animate-spin text-sky-600" />
+              </div>
+            </div>
+          )}
+   
+
+
+    <div className="m-3 p-3 sm:m-5 sm:p-5 flex flex-col sm:flex-row border border-gray-200 rounded-lg overflow-hidden mb-5 bg-pink-300 transition-shadow relative shadow-[4px_4px_10px_rgba(0,0,0,0.3)]">
       {/* Image section */}
       {image && (
         <div className="w-full sm:w-1/3 h-48 sm:h-auto">
           <img
             src={image}
             alt={title}
-            className="w-full h-full object-cover rounded-lg shadow-sm"
+            className="w-full h-full object-cover rounded-lg shadow-[4px_4px_10px_rgba(0,0,0,0.3)]"
           />
         </div>
       )}
@@ -52,13 +87,14 @@ const PostCard = ({
       {authUser._id === userId && (
         <button
           onClick={onDelete}
-          className="absolute bottom-2 right-2 p-2 text-red-500 hover:text-red-700 transition-colors"
+          className="absolute bottom-2 right-2 p-2 text-black hover:text-red-700 transition-colors"
           aria-label="Delete post"
         >
           <Trash2 className="w-5 h-5" />
         </button>
       )}
     </div>
+    </>
   );
 };
 

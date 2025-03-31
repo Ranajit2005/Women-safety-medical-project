@@ -33,7 +33,7 @@ export const useAuthStore = create((set, get) => ({
         set({ isSigningUp: true });
         try {
             const res = await axiosInstance.post('/auth/signup', data);
-            console.log('res in signup:', res.data);
+            // console.log('res in signup:', res.data);
 
             set({ authUser: res.data });
             toast.success(res.data.message);
@@ -63,7 +63,7 @@ export const useAuthStore = create((set, get) => ({
         try {
             const res = await axiosInstance.post('auth/login', data);
             set({ authUser: res.data });
-            console.log('res in login:', res.data.message);
+            // console.log('res in login:', res.data.message);
 
             toast.success(res.data.message);
 
@@ -89,7 +89,7 @@ export const useAuthStore = create((set, get) => ({
                 profession,
                 bio
             })
-            console.log('user in updateProfile:', user.data);
+            // console.log('user in updateProfile:', user.data);
             set({ authUser: user.data });
             toast.success('Profile updated successfully');
         } catch (error) {

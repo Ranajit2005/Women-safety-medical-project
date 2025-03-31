@@ -44,5 +44,31 @@ const addArticle = async (req, res) => {
     }
 }
 
+const deleteArticle = async (req, res) => {
+    try {
+        const { postId, publicId } = req.body;
+        console.log("Post Id", postId, "Public Id", publicId);
+        // const article = await Article.findByIdAndDelete(postId);
 
-export { getAllArticles, addArticle };
+        // if (!article) {
+        //     return res.status(404).json({
+        //         message: "Article not found",
+        //         success: false
+        //     });
+        // }
+
+        // return res.status(200).json({
+        //     message: "Article deleted successfully",
+        //     success: true,
+        // });
+
+    } catch (error) {
+        // return res.status(400).json({
+        //     message: "Something went wrong in deleting article",
+        //     success: false
+        // });
+    }
+}
+
+
+export { getAllArticles, addArticle, deleteArticle };

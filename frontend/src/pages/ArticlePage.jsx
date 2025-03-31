@@ -32,6 +32,8 @@ const ArticlePage = () => {
               image={article.image}
               date={article.date}
               userId={article.userId}
+              postId={article._id}
+              publicId={article.public_id}
             />
           ))
         )}
