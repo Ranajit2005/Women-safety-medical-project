@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { axiosInstance } from "../lib/axios";
 import { useAuthStore } from "../store/useAuthStore";
 import { useNavigate } from "react-router-dom";
-import { AlertCircle, FileImage, Upload } from "lucide-react";
+import { AlertCircle, FileImage, Loader2, Upload } from "lucide-react";
 
 
 
@@ -107,7 +107,7 @@ const Form = () => {
             <label className="block text-gray-700">Disease Name</label>
             <input
               type="text"
-              {...register("fullName", { required: "Disease Name is required" })}
+              {...register("disease", { required: "Disease Name is required" })}
               className="w-full p-2 border border-gray-300 rounded mt-1 bg-purple-200"
               onChange={(e) => setTitle(e.target.value)}
             />
@@ -124,7 +124,7 @@ const Form = () => {
             <label className="block text-gray-700">Doctor Name</label>
             <input
               type="text"
-              {...register("fullName", { required: "Name is required" })}
+              {...register("doctor", { required: "Name is required" })}
               className="w-full p-2 border border-gray-300 rounded mt-1 bg-purple-200"
               onChange={(e) => setDoctor(e.target.value)}
             />
@@ -140,7 +140,7 @@ const Form = () => {
           <div className="mb-1">
             <label className="block text-gray-700">Content</label>
             <textarea
-              {...register("bio", { required: "Content should be given" })}
+              {...register("content", { required: "Content should be given" })}
               className="w-full p-2 border border-gray-300 rounded mt-1"
               onChange={(e) => setContent(e.target.value)}
             />
