@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Trash2 } from "lucide-react";
+import { Loader2, Trash2 } from "lucide-react";
 import { useAuthStore } from "../store/useAuthStore";
 import { axiosInstance } from "../lib/axios";
 
@@ -25,7 +25,10 @@ const PostCard = ({
     try {
         setLoading(true);
         const { data } = await axiosInstance.delete("/article/delete", {
-            postId, publicId
+            data: {
+                postId,
+                publicId
+            }
         })
 
         console.log("Post deleted successfully:", data);
