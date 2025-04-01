@@ -13,7 +13,7 @@ function Circle() {
         imageSrc="bg/bg1.jpg"
         title="Substances and women's body"
         hoverText="Understand how substances affect women's health."
-        link="#"
+        link="/subAndBody"
       />
       <CircleCard
         imageSrc="/bg/bg1.jpg"
@@ -25,7 +25,7 @@ function Circle() {
         imageSrc="/bg/bg1.jpg"
         title="Women products"
         hoverText="Explore curated products designed for women."
-        link="#"
+        link="/product"
       />
     </div>
   );

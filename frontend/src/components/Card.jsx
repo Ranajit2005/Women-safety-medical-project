@@ -14,7 +14,7 @@ const CardFlip = () => {
         {/* Front Side (Image) */}
         <div className="flip-card-front">
           <img
-            src="PCOS (1).jpg"
+            src="/Diseases/PCOS (1).jpg"
             alt="Card Front"
             className="w-full h-full object-cover rounded-lg"
           />
@@ -42,7 +42,7 @@ const CardFlip = () => {
         {/* Front Side (Image) */}
         <div className="flip-card-front">
           <img
-            src="Endometriosis (1).jpg"
+            src="/Diseases/Endometriosis (1).jpg"
             alt="Card Front"
             className="w-full h-full object-cover rounded-lg"
           />
@@ -70,7 +70,7 @@ const CardFlip = () => {
         {/* Front Side (Image) */}
         <div className="flip-card-front">
           <img
-            src="Primary Ovarian Insufficiency (POI) (1).jpg"
+            src="/Diseases/Primary Ovarian Insufficiency (POI) (1).jpg"
             alt="Card Front"
             className="w-full h-full object-cover rounded-lg"
           />
@@ -99,7 +99,7 @@ const CardFlip = () => {
         {/* Front Side (Image) */}
         <div className="flip-card-front">
           <img
-            src="Cervical Cancer (1).jpg"
+            src="/Diseases/Cervical Cancer (1).jpg"
             alt="Card Front"
             className="w-full h-full object-cover rounded-lg"
           />
@@ -130,7 +130,7 @@ const CardFlip = () => {
         {/* Front Side (Image) */}
         <div className="flip-card-front">
           <img
-            src="Breast Cancer (1).jpg"
+            src="/Diseases/Breast Cancer (1).jpg"
             alt="Card Front"
             className="w-full h-full object-cover rounded-lg"
           />
@@ -161,7 +161,7 @@ const CardFlip = () => {
         {/* Front Side (Image) */}
         <div className="flip-card-front">
           <img
-            src="Osteoporosis (1).jpg"
+            src="/Diseases/Osteoporosis (1).jpg"
             alt="Card Front"
             className="w-full h-full object-cover rounded-lg"
           />
@@ -192,7 +192,7 @@ const CardFlip = () => {
         {/* Front Side (Image) */}
         <div className="flip-card-front">
           <img
-            src="Ovarian Cancer (1).jpg"
+            src="/Diseases/Ovarian Cancer (1).jpg"
             alt="Card Front"
             className="w-full h-full object-cover rounded-lg"
           />
@@ -224,7 +224,7 @@ const CardFlip = () => {
         {/* Front Side (Image) */}
         <div className="flip-card-front">
           <img
-            src="Pelvic Organ Prolapse (1).jpg"
+            src="/Diseases/Pelvic Organ Prolapse (1).jpg"
             alt="Card Front"
             className="w-full h-full object-cover rounded-lg"
           />

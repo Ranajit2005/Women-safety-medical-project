@@ -2,7 +2,7 @@ import React from 'react';
 
 const CardD = ({ imageUrl, title, content, hoverContent }) => {
   return (
-    <div className="group relative w-full flex bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl">
+    <div className="group relative w-full flex bg-pink-300 rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl">
       {/* Card Image */}
       <img 
         src={imageUrl} 
