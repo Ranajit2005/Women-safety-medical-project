@@ -13,6 +13,7 @@ import Footer from './components/Footer.jsx'
 import ProfileUpdate from './pages/ProfileUpdate.jsx'
 import ArticlePage from './pages/ArticlePage.jsx'
 import PostForm from './pages/PostForm.jsx'
+import Diseases from './pages/diseases.jsx'
 
 
 
@@ -50,6 +51,7 @@ function App() {
         <Route path="/profile" element={authUser ? <ProfileUpdate /> : <Navigate to="login" />} />
         <Route path="/articles" element={authUser ? <ArticlePage /> : <Navigate to="login" />} />
         <Route path="/form" element={authUser ? <PostForm /> : <Navigate to="login" />} />
+        <Route path="/diseases" element={authUser ? <Diseases/> : <Navigate to="login" />} />
       </Routes>
 
       {/* <Footer/> */}

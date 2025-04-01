@@ -5,6 +5,7 @@ import Landing from "../components/Landing";
 import Card from "../components/Card";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import ArticlePage from "./ArticlePage";
 
 const Home = () => {
   return (
@@ -19,7 +20,7 @@ const Home = () => {
       </div>
 
         {/* 2nd section */}
-      <div className="shadow-lg ">
+      <div className="shadow-lg my-3 sm:my-5 ">
         <div className="shadow-[4px_4px_10px_rgba(0,0,0,0.3)] ">
           <h1 className="py-3 text-2xl sm:text-4xl text-center">
             Health Issues Women Body
@@ -30,7 +31,7 @@ const Home = () => {
 
 
         {/* 3rd section */}
-      <div className="shadow-lg">
+      <div className="shadow-lg my-6 sm:my-10 ">
         <div className="p-4 sm:p-5 shadow-[4px_4px_10px_rgba(0,0,0,0.3)]">
           {/* <h1 className="pb-3 text-2xl sm:text-4xl text-center">Hellow hellow test</h1> */}
           <Circle />
@@ -46,6 +47,8 @@ const Home = () => {
                 <ScrollableItems />
             </div>
         </div>
+
+        {/* <ArticlePage/> */}
 
         <Footer/>
     </div>
