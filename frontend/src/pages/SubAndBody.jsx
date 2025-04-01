@@ -2,7 +2,7 @@ import React from "react";
 import Card from "../components/CardD";
 import Navbar from "../components/Navbar";
 
-const diseases = () => {
+const SubAndBody = () => {
   const cardData = [
     {
       imageUrl: "https://images.unsplash.com/photo-1499750310107-5fef28a66643",
@@ -69,4 +69,4 @@ const diseases = () => {
   );
 };
 
-export default diseases;
+export default SubAndBody;
