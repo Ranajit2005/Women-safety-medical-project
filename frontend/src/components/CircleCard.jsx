@@ -15,7 +15,7 @@ const CircleCard = ({ imageSrc, title, hoverText,link }) => {
           {hoverText}
           <a
           href={link}
-          target="_blank"
+          // target="_blank"
           rel="noopener noreferrer"
           className="text-blue-500 font-semibold hover:underline inline-block"
         >
