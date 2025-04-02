@@ -7,7 +7,7 @@ const CardD = ({ imageUrl, title, content, hoverContent }) => {
       <img 
         src={imageUrl} 
         alt={title} 
-        className="w-full md:w-1/3 h-48 object-cover rounded-t-lg md:rounded-l-lg md:rounded-tr-none md:my-auto md:ml-3 md:mr-1"
+        className="w-full md:w-1/3 h-48 object-cover md:my-auto md:ml-3 md:mr-1 rounded-lg"
       />
       
       {/* Main Content - Always Visible */}
