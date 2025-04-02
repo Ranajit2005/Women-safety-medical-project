@@ -2,17 +2,17 @@ import React from 'react';
 
 const CardD = ({ imageUrl, title, content, hoverContent }) => {
   return (
-    <div className="group relative w-full flex bg-pink-300 rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl">
+    <div className="h-56 group relative w-full flex bg-pink-300 rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl">
       {/* Card Image */}
       <img 
         src={imageUrl} 
         alt={title} 
-        className="w-1/3 h-48 object-cover transition-transform duration-300 group-hover:scale-105 rounded-lg m-1"
+        className="my-auto pl-3 sm:pl-5 w-1/3 h-48 object-cover transition-transform duration-300 group-hover:scale-105 rounded-lg m-1"
       />
       
       {/* Main Content (always visible) */}
       <div className="p-4 w-2/3">
-        <h3 className="text-xl font-semibold mb-2">{title}</h3>
+        <h3 className="text-2xl font-semibold mb-2">{title}</h3>
         <p className="text-gray-600">{content}</p>
       </div>
       
