@@ -16,6 +16,7 @@ import ArticlePage from './pages/ArticlePage.jsx'
 import PostForm from './pages/PostForm.jsx'
 import SubAndBody from './pages/SubAndBody.jsx'
 import Product from './pages/Product.jsx'
+import ChatWindow from './pages/ChatWindow.jsx'
 
 
 
@@ -45,6 +46,7 @@ function App() {
     <div>
 
       {/* <Navbar /> */}
+      <ChatWindow />
       <Routes>
         <Route path="/" element={authUser ? <Home /> : <Navigate to="login" />} />
         <Route path="/login" element={!authUser ? <LogIn /> : <Navigate to="/" />} />
