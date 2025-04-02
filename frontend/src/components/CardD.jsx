@@ -7,7 +7,7 @@ const CardD = ({ imageUrl, title, content, hoverContent }) => {
       <img 
         src={imageUrl} 
         alt={title} 
-        className="w-1/3 h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+        className="w-1/3 h-48 object-cover transition-transform duration-300 group-hover:scale-105 rounded-lg m-1"
       />
       
       {/* Main Content (always visible) */}

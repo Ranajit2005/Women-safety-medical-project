@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "../components/CardD";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const Diseases = () => {
   const cardData = [
@@ -65,6 +66,11 @@ const Diseases = () => {
           ))}
         </div>
       </div>
+      
+      <div className="absolute z-10 w-full">
+        <Footer/>
+      </div>
+
     </>
   );
 };
