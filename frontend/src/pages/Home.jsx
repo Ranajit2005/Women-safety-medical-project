@@ -23,7 +23,7 @@ const Home = () => {
       <div className="shadow-lg my-3 sm:my-5 ">
         <div className="shadow-[4px_4px_10px_rgba(0,0,0,0.3)] ">
           <h1 className="py-3 text-2xl sm:text-4xl text-center">
-            Health Issues Women Body
+            Health Issues in Women's Body
           </h1>
           <Card />
         </div>
