@@ -34,7 +34,7 @@ const ChatWindow = () => {
             )}
 
             {isOpen && (
-                <div className="w-80 bg-white shadow-lg rounded-lg p-4 border border-gray-300 fixed bottom-20 right-5">
+                <div className="w-80 bg-white shadow-lg rounded-lg p-4 border border-gray-300 fixed bottom-20 right-5 max-w-full">
                     <div className="flex justify-between items-center border-b pb-2">
                         <h3 className="text-lg font-bold">Health Chatbot</h3>
                         <button onClick={toggleChat} className="text-gray-600 hover:text-gray-800">
@@ -48,21 +48,22 @@ const ChatWindow = () => {
                             </div>
                         ))}
                     </div>
-                    <div className="flex gap-2 mt-2">
+                    <div className="flex gap-2 mt-2 flex-wrap">
                         <input
                             type="text"
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
-                            className="flex-1 p-2 border rounded"
+                            className="flex-1 p-2 border rounded min-w-0"
                             placeholder="Ask me anything..."
                         />
-                        <button onClick={sendMessage} className="bg-blue-500 text-white px-4 py-2 rounded">
+                        <button onClick={sendMessage} className="bg-blue-500 text-white px-4 py-2 rounded whitespace-nowrap">
                             Send
                         </button>
                     </div>
                 </div>
             )}
         </div>
+
     );
 };
 
