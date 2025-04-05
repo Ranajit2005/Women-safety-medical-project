@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Loader2, Trash2 } from "lucide-react";
 import { useAuthStore } from "../store/useAuthStore";
 import { axiosInstance } from "../lib/axios";
+import { useNavigate } from "react-router-dom";
 
 const PostCard = ({
   doctorName,
@@ -16,6 +17,7 @@ const PostCard = ({
 //   console.log("Userid is : ", userId);
   const { authUser } = useAuthStore();
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 //   console.log("authUser:", authUser._id);
 
   const onDelete = async () => {
@@ -33,7 +35,7 @@ const PostCard = ({
 
         console.log("Post deleted successfully:", data);
 
-
+        navigate(0);
         setLoading(false);
 
     } catch (error) {

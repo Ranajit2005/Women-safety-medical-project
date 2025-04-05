@@ -17,11 +17,13 @@ const ArticlePage = () => {
 
       <h1 className='absolute w-full text-center text-3xl pt-16 sm:pt-2 sm:text-5xl text-black z-50'>Articles</h1>
 
-      <div className="absolute z-50 top-24 sm:top-12 w-full">
+      <p className="absolute z-50 w-full text-center text-black top-6 sm:top-20 pt-20 sm:pt-0">If you want to post any article, then <a href="/form" className="text-blue-700 hover:underline hover:cursor-pointer">click here</a></p>
+
+      <div className="absolute z-30 top-24 w-full">
         {isFetchingArticles ? (
           <div className="text-center py-8">Loading articles...</div>
         ) : !articles || articles.length === 0 ? (
-          <div className="text-center py-8">No articles found</div>
+          <div className="absolute w-full text-center py-8 top-36 text-2xl font-bold">No articles posted</div>
         ) : (
           articles.map((article) => (
             <PostCard
