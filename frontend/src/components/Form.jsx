@@ -87,6 +87,7 @@ const Form = () => {
         </div>
       )}
 
+
       {/* Background Image with Opacity */}
       <div
         className="fixed inset-0 w-full h-full bg-cover bg-center opacity-50"

@@ -5,9 +5,9 @@ import Navbar from '../components/Navbar'
 const PostForm = () => {
   return (
     <div className='flex flex-col'>
-      <Navbar/>
-          {/* Post */}
-      <Form/>
+      {/* <Navbar/> */}
+      {/* Post */}
+      <Form />
     </div>
   )
 }

@@ -20,6 +20,7 @@ import ChatWindow from './pages/ChatWindow.jsx'
 
 
 
+
 function App() {
 
   const { checkAuth, isCheckingAuth, authUser } = useAuthStore();
@@ -57,6 +58,7 @@ function App() {
         <Route path="/diseases" element={authUser ? <Diseases /> : <Navigate to="login" />} />
         <Route path="/subAndBody" element={authUser ? <SubAndBody /> : <Navigate to="login" />} />
         <Route path="/product" element={authUser ? <Product /> : <Navigate to="login" />} />
+        <Route path="/articles" element={authUser ? <ArticlePage /> : <Navigate to="login" />} />
       </Routes>
 
       {/* <Footer/> */}
