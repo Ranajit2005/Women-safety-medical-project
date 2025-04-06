@@ -5,7 +5,8 @@ import Landing from "../components/Landing";
 import Card from "../components/Card";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import ArticlePage from "./ArticlePage";
+// import ArticlePage from "./ArticlePage";
+import SomeArticle from "./SomeArticle";
 
 const Home = () => {
   return (
@@ -48,7 +49,13 @@ const Home = () => {
             </div>
         </div>
 
-        {/* <ArticlePage/> */}
+        {/* 5th section */}
+        <div className="shadow-lg p-3">
+            <div className="shadow-[4px_4px_10px_rgba(0,0,0,0.3)] ">
+                <SomeArticle/>
+            </div>
+        </div>
+
 
         <Footer/>
     </div>
