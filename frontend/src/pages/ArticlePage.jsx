@@ -15,9 +15,9 @@ const ArticlePage = () => {
 
       <Navbar />
 
-      <h1 className='absolute w-full text-center text-3xl pt-16 sm:pt-2 sm:text-5xl text-black z-50'>Articles</h1>
+      <h1 className='absolute w-full text-center text-3xl pt-16 sm:pt-2 sm:text-5xl text-black z-40'>Articles</h1>
 
-      <p className="absolute z-50 w-full text-center text-black top-6 sm:top-20 pt-20 sm:pt-0">If you want to post any article, then <a href="/form" className="text-blue-700 hover:underline hover:cursor-pointer">click here</a></p>
+      <p className="absolute z-40 w-full text-center text-black top-6 sm:top-20 pt-20 sm:pt-0">If you want to post any article, then <a href="/form" className="text-blue-700 hover:underline hover:cursor-pointer">click here</a></p>
 
       <div className="absolute z-30 top-24 w-full">
         {isFetchingArticles ? (

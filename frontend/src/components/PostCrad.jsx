@@ -59,7 +59,7 @@ const PostCard = ({
    
 
 
-    <div className="m-3 p-3 sm:m-5 sm:p-5 flex flex-col sm:flex-row border border-gray-200 rounded-lg overflow-hidden mb-5 bg-pink-300 transition-shadow relative shadow-[4px_4px_10px_rgba(0,0,0,0.3)]">
+    <div className="mt-10 m-3 p-3 sm:m-5 sm:p-5 flex flex-col sm:flex-row border border-gray-200 rounded-lg overflow-hidden mb-5 bg-pink-300 transition-shadow relative shadow-[4px_4px_10px_rgba(0,0,0,0.3)]">
       {/* Image section */}
       {image && (
         <div className="w-full sm:w-1/3 h-48 sm:h-auto">
