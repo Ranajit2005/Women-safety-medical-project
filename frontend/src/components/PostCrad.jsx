@@ -77,7 +77,7 @@ const PostCard = ({
           <h3 className="text-lg font-semibold text-gray-800 line-clamp-2">
             {title}
           </h3>
-          <span className="text-xs text-gray-500 whitespace-nowrap ml-2">
+          <span className="absolute top-5 right-5 text-xs text-black whitespace-nowrap ml-2">
             {new Date(date).toLocaleDateString()}
           </span>
         </div>
