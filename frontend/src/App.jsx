@@ -17,6 +17,7 @@ import PostForm from './pages/PostForm.jsx'
 import SubAndBody from './pages/SubAndBody.jsx'
 import Product from './pages/Product.jsx'
 import ChatWindow from './pages/ChatWindow.jsx'
+import Contact from './pages/Contact.jsx'
 
 
 
@@ -53,7 +54,7 @@ function App() {
         <Route path="/login" element={!authUser ? <LogIn /> : <Navigate to="/" />} />
         <Route path="/signup" element={!authUser ? <SignUp /> : <Navigate to="/" />} />
         <Route path="/profile" element={authUser ? <ProfileUpdate /> : <Navigate to="login" />} />
-        <Route path="/articles" element={authUser ? <ArticlePage /> : <Navigate to="login" />} />
+        <Route path="//contact" element={authUser ? <Contact /> : <Navigate to="login" />} />
         <Route path="/form" element={authUser ? <PostForm /> : <Navigate to="login" />} />
         <Route path="/diseases" element={authUser ? <Diseases /> : <Navigate to="login" />} />
         <Route path="/subAndBody" element={authUser ? <SubAndBody /> : <Navigate to="login" />} />

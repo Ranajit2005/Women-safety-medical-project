@@ -21,7 +21,7 @@ const ArticlePage = () => {
 
       <Navbar />
 
-      <h1 className='absolute w-full text-center text-3xl pt-16 sm:pt-2 sm:text-4xl text-black z-40'>Articles</h1>
+      <h1 className='absolute right-1/3 sm:right-1/2 text-center text-3xl pt-16 sm:pt-2 sm:text-4xl text-black z-40'>Articles</h1>
 
       <p className="absolute z-40 w-full text-center text-black top-6 sm:top-20 pt-20 sm:pt-0 font-bold">To post any article, then <a href="/form" className="text-blue-700 hover:underline hover:cursor-pointer">click here</a></p>
 
