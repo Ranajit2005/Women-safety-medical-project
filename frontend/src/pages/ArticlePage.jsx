@@ -2,7 +2,7 @@ import React from 'react';
 import { useArticleStore } from '../store/useArticleStore.js';
 import PostCard from '../components/PostCrad.jsx';
 import Navbar from '../components/Navbar.jsx';
-import Footer from '../components/Footer.jsx';
+// import Footer from '../components/Footer.jsx';
 // import { useNavigate } from 'react-router-dom';
 
 const ArticlePage = () => {
