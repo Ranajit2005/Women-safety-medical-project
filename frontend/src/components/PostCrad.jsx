@@ -74,7 +74,7 @@ const PostCard = ({
       {/* Content section */}
       <div className="w-full sm:w-2/3 p-4 flex flex-col">
         <div className="flex justify-between items-start mb-2">
-          <h3 className="text-lg font-semibold text-gray-800 line-clamp-2">
+          <h3 className="text-2xl font-semibold text-gray-800 line-clamp-2">
             {title}
           </h3>
           <span className="absolute top-5 right-5 text-xs text-black whitespace-nowrap ml-2">
@@ -82,7 +82,7 @@ const PostCard = ({
           </span>
         </div>
 
-        <p className="text-sm text-gray-600 mb-2">By Dr. {doctorName}</p>
+        <p className="text-lg font-bold text-gray-600 mb-2">By Dr. {doctorName}</p>
 
         <p className="text-gray-700 text-sm mb-4 line-clamp-3">{content}</p>
       </div>
