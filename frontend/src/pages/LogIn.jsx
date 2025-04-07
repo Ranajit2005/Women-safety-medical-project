@@ -65,7 +65,7 @@ const LogIn = () => {
         style={{ backgroundImage: `url('/bg/bg3.jpg')` }}
       ></div>
 
-      <div className="flex justify-center items-center h-screen relative mx-3 sm:mx-0 top-10 pt-10 ">
+      <div className="flex justify-center items-center h-screen relative mx-3 sm:mx-0">
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="bg-purple-500 text-black p-4 sm:p-8 rounded-lg shadow-lg w-80 sm:w-96"

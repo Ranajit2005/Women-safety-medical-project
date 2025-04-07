@@ -52,7 +52,7 @@ const ProfileUpdate = () => {
         style={{ backgroundImage: `url('/bg/bg3.jpg')` }}
       ></div>
 
-      <div className="flex justify-center items-center h-screen relative mx-3 sm:mx-0 top-10 pt-10 ">
+      <div className="flex justify-center items-center h-screen relative mx-3 sm:mx-0 my-6 pt-10 ">
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="bg-[#f542b0] text-black p-4 sm:p-8 rounded-lg shadow-lg w-80 sm:w-96"
@@ -66,7 +66,9 @@ const ProfileUpdate = () => {
             <label className="block text-gray-700">Full Name</label>
             <input
               type="text"
-              {...register("fullName", { required: "Full Name is required" })}
+              {...register("fullName", {
+                //  required: "Full Name is required" 
+                })}
               className="w-full p-2 border border-gray-300 rounded mt-1 bg-purple-200"
               placeholder={fullName}
               onChange={(e) => setFullName(e.target.value)}
@@ -84,7 +86,7 @@ const ProfileUpdate = () => {
             <input
               type="email"
               {...register("email", {
-                required: "Email is required",
+                // required: "Email is required",
                 pattern: {
                   value: /^\S+@\S+$/i,
                   message: "Enter a valid email",
@@ -108,7 +110,7 @@ const ProfileUpdate = () => {
             <input
               type="number"
               {...register("age", {
-                required: "Age is required",
+                // required: "Age is required",
                 min: { value: 0, message: "Give a valid age" },
               })}
               className="w-full p-2 border border-gray-300 rounded mt-1 bg-purple-100"

@@ -18,6 +18,7 @@ const CardD = ({ imageUrl, title, content, hoverContent }) => {
       
       {/* Hover Content - Hidden on mobile, shows on hover (desktop) */}
       <div className="hidden md:absolute md:inset-0 bg-black bg-opacity-70 md:flex flex-col justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white">
+        {/* <div className='font-bold text-center'>Hellow</div> */}
         <div className="overflow-y-auto">
           <p className="text-sm whitespace-pre-line">{hoverContent}</p>
         </div>

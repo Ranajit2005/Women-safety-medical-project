@@ -10,7 +10,7 @@ import SomeArticle from "./SomeArticle";
 
 const Home = () => {
   return (
-    <div className="bg-pink-200 mt-3 pb-3 sm:pb-5">
+    <div className="bg-pink-200 mt-3">
 
         <Navbar/>
 
