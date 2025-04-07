@@ -2,7 +2,7 @@ import React from 'react';
 
 const CardD = ({ imageUrl, title, content, hoverContent, hoverContent2 }) => {
   return (
-    <div className="h-auto md:h-56 group relative w-full flex flex-col md:flex-row bg-pink-300 rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl">
+    <div className="h-auto md:h-60 group relative w-full flex flex-col md:flex-row bg-pink-300 rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl">
       {/* Card Image - Always Visible */}
       <img 
         src={imageUrl} 
@@ -21,10 +21,10 @@ const CardD = ({ imageUrl, title, content, hoverContent, hoverContent2 }) => {
         {/* <div className='font-bold text-center'>Hellow</div> */}
         
         <div className="overflow-y-auto text-start ">
-          <p className="text-sm whitespace-pre-line">{hoverContent}</p>
+          <p className="text-xl whitespace-pre-line">{hoverContent}</p>
         </div>
         <div className="overflow-y-auto">
-          <p className="text-sm whitespace-pre-line">{hoverContent2}</p>
+          <p className="text-xl whitespace-pre-line">{hoverContent2}</p>
         </div>
       </div>
     </div>

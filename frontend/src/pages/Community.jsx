@@ -151,13 +151,13 @@ export default function Community() {
 
       <div className="relative z-10 p-4 max-w-2xl mx-auto mt-20">
         <div className="bg-pink-200/5 bg-opacity-90 backdrop-blur-sm rounded-lg shadow-lg p-6">
-          <h2 className="text-2xl font-bold mb-6 text-pink-900 border-b border-pink-200 pb-2">
+          <h2 className="text-2xl font-bold mb-6 text-black border-b border-pink-200 pb-2">
             Community Support Forum
           </h2>
 
           {/* New Post Section */}
           <div className="mb-8 bg-pink-500/5 bg-opacity-70 p-4 rounded-lg border border-pink-100">
-            <h3 className="text-lg font-semibold text-pink-700 mb-3">
+            <h3 className="text-lg font-semibold text-black mb-3">
               Share your thoughts or ask a question
             </h3>
             <textarea
@@ -170,7 +170,7 @@ export default function Community() {
             <div className="flex justify-end mt-3">
               <button
                 onClick={submitPost}
-                className="px-5 py-2 bg-pink-600 hover:bg-pink-700 text-white rounded-lg transition-colors duration-200"
+                className="px-5 py-2 bg-pink-600 hover:bg-black text-white rounded-lg transition-colors duration-200"
                 disabled={loading}
               >
                 {loading ? "Posting..." : "Post"}
@@ -194,7 +194,7 @@ export default function Community() {
               posts.map((post) => (
                 <div
                   key={post.id}
-                  className="border border-pink-100 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow relative bg-pink-200 bg-opacity-70"
+                  className="border border-pink-500 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow relative bg-pink-100 bg-opacity-70"
                 >
                   {/* Post Delete Button (only shows for current user's posts) */}
                   {isCurrentUser(post.user) && (
@@ -222,11 +222,11 @@ export default function Community() {
                   )}
 
                   <div className="flex items-center mb-3">
-                    <div className="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center text-pink-600 font-semibold mr-3">
+                    <div className="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center text-pink-700 font-semibold mr-3">
                       {getUserInitial(post.user)}
                     </div>
                     <div>
-                      <div className="font-semibold text-pink-800">
+                      <div className="font-semibold text-black">
                         {post.user || "Anonymous User"}
                       </div>
                       <div className="text-xs text-pink-500">
@@ -234,7 +234,7 @@ export default function Community() {
                       </div>
                     </div>
                   </div>
-                  <div className="mb-4 text-gray-700 pl-11">{post.content}</div>
+                  <div className="mb-4 text-gray-900 pl-11">{post.content}</div>
 
                   {/* Comments Section */}
                   <div className="ml-11 border-t border-pink-100 pt-3">
