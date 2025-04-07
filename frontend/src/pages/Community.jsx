@@ -98,7 +98,7 @@ export default function Community() {
   };
 
   const deletePost = async (postId) => {
-    if (!window.confirm("Are you sure you want to delete this post?")) return;
+    // if (!window.confirm("Are you sure you want to delete this post?")) return;
     setDeleting(true);
     try {
       await axiosInstance.delete(`/posts/${postId}`);
@@ -111,8 +111,8 @@ export default function Community() {
   };
 
   const deleteComment = async (postId, commentId) => {
-    if (!window.confirm("Are you sure you want to delete this comment?"))
-      return;
+    // if (!window.confirm("Are you sure you want to delete this comment?"))
+    //   return;
     try {
       await axiosInstance.delete(`/posts/${postId}/comments/${commentId}`);
       socket.emit("delete_comment", { postId, commentId });
@@ -150,13 +150,13 @@ export default function Community() {
       <Navbar />
 
       <div className="relative z-10 p-4 max-w-2xl mx-auto mt-20">
-        <div className="bg-pink-50 bg-opacity-90 backdrop-blur-sm rounded-lg shadow-lg p-6">
-          <h2 className="text-2xl font-bold mb-6 text-pink-800 border-b border-pink-200 pb-2">
+        <div className="bg-pink-200/5 bg-opacity-90 backdrop-blur-sm rounded-lg shadow-lg p-6">
+          <h2 className="text-2xl font-bold mb-6 text-pink-900 border-b border-pink-200 pb-2">
             Community Support Forum
           </h2>
 
           {/* New Post Section */}
-          <div className="mb-8 bg-white bg-opacity-70 p-4 rounded-lg border border-pink-100">
+          <div className="mb-8 bg-pink-500/5 bg-opacity-70 p-4 rounded-lg border border-pink-100">
             <h3 className="text-lg font-semibold text-pink-700 mb-3">
               Share your thoughts or ask a question
             </h3>
@@ -194,7 +194,7 @@ export default function Community() {
               posts.map((post) => (
                 <div
                   key={post.id}
-                  className="border border-pink-100 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow relative bg-white bg-opacity-70"
+                  className="border border-pink-100 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow relative bg-pink-200 bg-opacity-70"
                 >
                   {/* Post Delete Button (only shows for current user's posts) */}
                   {isCurrentUser(post.user) && (
