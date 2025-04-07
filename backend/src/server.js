@@ -5,6 +5,7 @@ import cookieParser from 'cookie-parser';
 import { connectDB } from './lib/dbConnection.js';
 import authRouter from './routes/auth.route.js';
 import articleRouter from './routes/article.route.js';
+import chatRouter from './routes/chat.route.js';
 
 
 dotenv.config();
@@ -38,6 +39,8 @@ app.use(cors({
 app.use('/api/auth', authRouter);
 
 app.use('/api/article', articleRouter);
+
+app.use('/api/chat', chatRouter);
 
 
 

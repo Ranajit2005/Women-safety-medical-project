@@ -4,6 +4,7 @@ import { axiosInstance } from "../lib/axios";
 import { useAuthStore } from "../store/useAuthStore";
 import { useNavigate } from "react-router-dom";
 import { AlertCircle, FileImage, Loader2, Upload } from "lucide-react";
+import Navbar from "./Navbar";
 
 
 
@@ -72,7 +73,7 @@ const Form = () => {
     // const result = await res.json();
     // console.log(result);
     setLoading(false);
-
+    // navigate(0);
     navigate('/articles')
 
   }
@@ -87,11 +88,14 @@ const Form = () => {
         </div>
       )}
 
+
       {/* Background Image with Opacity */}
       <div
         className="fixed inset-0 w-full h-full bg-cover bg-center opacity-50"
         style={{ backgroundImage: `url('/bg/bg2.webp')` }}
       ></div>
+
+      <Navbar/>
 
       <div className="flex justify-center items-center h-screen relative mx-3 sm:mx-0 top-10 sm:top-10 pt-16">
         <form

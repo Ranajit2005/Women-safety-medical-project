@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Loader2, Trash2 } from "lucide-react";
 import { useAuthStore } from "../store/useAuthStore";
 import { axiosInstance } from "../lib/axios";
+import { useNavigate } from "react-router-dom";
 
 const PostCard = ({
   doctorName,
@@ -16,6 +17,7 @@ const PostCard = ({
 //   console.log("Userid is : ", userId);
   const { authUser } = useAuthStore();
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 //   console.log("authUser:", authUser._id);
 
   const onDelete = async () => {
@@ -33,7 +35,7 @@ const PostCard = ({
 
         console.log("Post deleted successfully:", data);
 
-
+        navigate(0);
         setLoading(false);
 
     } catch (error) {
@@ -57,7 +59,7 @@ const PostCard = ({
    
 
 
-    <div className="m-3 p-3 sm:m-5 sm:p-5 flex flex-col sm:flex-row border border-gray-200 rounded-lg overflow-hidden mb-5 bg-pink-300 transition-shadow relative shadow-[4px_4px_10px_rgba(0,0,0,0.3)]">
+    <div className="mt-10 m-3 p-3 sm:m-5 sm:p-5 flex flex-col sm:flex-row border border-gray-200 rounded-lg overflow-hidden mb-5 bg-pink-300 transition-shadow relative shadow-[4px_4px_10px_rgba(0,0,0,0.3)]">
       {/* Image section */}
       {image && (
         <div className="w-full sm:w-1/3 h-48 sm:h-auto">
@@ -75,7 +77,7 @@ const PostCard = ({
           <h3 className="text-lg font-semibold text-gray-800 line-clamp-2">
             {title}
           </h3>
-          <span className="text-xs text-gray-500 whitespace-nowrap ml-2">
+          <span className="absolute top-5 right-5 text-xs text-black whitespace-nowrap ml-2">
             {new Date(date).toLocaleDateString()}
           </span>
         </div>

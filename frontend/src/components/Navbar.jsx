@@ -1,7 +1,7 @@
 import React from 'react'
 import { useAuthStore } from '../store/useAuthStore.js'
 import { Link } from 'react-router-dom'
-import { LogOut, Pill, Contact, User, LogIn } from 'lucide-react'
+import { LogOut, Pill, Contact, User, LogIn, ReceiptText } from 'lucide-react'
 
 const Navbar = () => {
     const { logout, authUser } = useAuthStore();
@@ -26,6 +26,11 @@ const Navbar = () => {
                         {
                             authUser ? (
                                 <>
+                                    <Link to={"/articles"} className='flex items-center btn btn-sm gap-2'>
+                                        <ReceiptText className='size-5' />
+                                        <span className='hidden sm:inline'>Articles</span>
+                                    </Link>
+
                                     <Link to={"/contact"} className='flex items-center btn btn-sm gap-2'>
                                         <Contact className='size-5' />
                                         <span className='hidden sm:inline'>Contact</span>
