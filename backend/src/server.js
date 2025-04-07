@@ -1,6 +1,10 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
+//const http = require("http");
+import http from 'http';
+//const { Server } = require("socket.io");
+import { Server } from 'socket.io';
 import cookieParser from 'cookie-parser';
 import { connectDB } from './lib/dbConnection.js';
 import authRouter from './routes/auth.route.js';
@@ -22,6 +26,14 @@ const mode = process.env.OPERATION;
 const FRONTEND_URL = mode === "production" ? process.env.FRONTEND_URL : 'http://localhost:5173';
 
 
+
+
+const server = http.createServer(app);
+const io = new Server(server, {
+    cors: { origin: "*" }
+});
+
+
 app.use(express.json({ limit: '5mb' }));
 app.use(express.urlencoded({ limit: '5mb', extended: true }));
 app.use(cookieParser());
@@ -33,7 +45,7 @@ app.use(cors({
 
 
 
-
+let posts = []; // { id, user, content, comments: [{ user, text }] }
 
 //routes
 app.use('/api/auth', authRouter);
@@ -52,7 +64,40 @@ app.get('/', (req, res) => {
     res.send('Hello World , frontend url is ' + FRONTEND_URL);
 });
 
-app.listen(PORT, () => {
-    console.log(`Server is running at  http://localhost:${PORT}`);
 
-})
+
+app.get("/api/posts", (req, res) => {
+    res.json(posts);
+});
+
+app.post("/api/posts", (req, res) => {
+    const post = { id: Date.now(), ...req.body, comments: [] };
+    posts.push(post);
+    io.emit("new_post", post);
+    res.status(201).json(post);
+});
+
+app.post("/api/posts/:id/comment", (req, res) => {
+    const post = posts.find(p => p.id === +req.params.id);
+    if (post) {
+        const comment = req.body;
+        post.comments.push(comment);
+        io.emit("new_comment", { postId: post.id, comment });
+        res.status(201).json(comment);
+    } else {
+        res.status(404).json({ error: "Post not found" });
+    }
+});
+
+io.on("connection", (socket) => {
+    console.log("User connected:", socket.id);
+    socket.on("disconnect", () => console.log("User disconnected:", socket.id));
+});
+
+// app.listen(PORT, () => {
+//     console.log(`Server is running at  http://localhost:${PORT}`);
+
+// })
+
+
+server.listen(PORT, () => console.log(`Server is running at  http://localhost:${PORT}`));
