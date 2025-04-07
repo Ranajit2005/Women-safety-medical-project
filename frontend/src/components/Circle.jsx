@@ -19,7 +19,7 @@ function Circle() {
         imageSrc="/ICONS/ICON3.jpg"
         title="Community and blogs"
         hoverText="Join the conversation and share your experiences."
-        link="#"
+        link="/community"
       />
       <CircleCard
         imageSrc="/ICONS/ICON4.jpg"
