@@ -20,26 +20,24 @@ const PostCard = ({
 
   const onDelete = async () => {
     console.log("Delete button clicked");
-    console.log("Post Id",postId,"Public Id", publicId);
+    console.log("Post Id", postId, "Public Id", publicId);
 
     try {
-        setLoading(true);
-        const { data } = await axiosInstance.delete("/article/delete", {
-            data: {
-                postId,
-                publicId
-            }
-        })
+      setLoading(true);
+      const { data } = await axiosInstance.delete("/article/delete", {
+        data: {
+          postId,
+          publicId
+        }
+      });
 
-        console.log("Post deleted successfully:", data);
-
-        navigate(0);
-        setLoading(false);
-
+      console.log("Post deleted successfully:", data);
+      navigate(0);
+      setLoading(false);
     } catch (error) {
-        console.log("Error deleting post:", error);
+      console.log("Error deleting post:", error);
     }
-  }
+  };
 
   return (
     <>
@@ -50,7 +48,7 @@ const PostCard = ({
           </div>
         </div>
       )}
-   
+
       <div className="mt-10 m-3 p-3 sm:m-5 sm:p-5 flex flex-col sm:flex-row border border-gray-200 rounded-lg overflow-hidden mb-5 bg-pink-300 transition-shadow relative shadow-[4px_4px_10px_rgba(0,0,0,0.3)]">
         {/* Image section */}
         {image && (
@@ -76,8 +74,8 @@ const PostCard = ({
 
           <p className="text-lg font-bold text-gray-600 mb-2">By Dr. {doctorName}</p>
 
-          {/* Scrollable content */}
-          <div className="text-gray-700 text-sm mb-4 overflow-y-auto max-h-40">
+          {/* Scrollable content with styled scrollbar */}
+          <div className="text-gray-700 text-sm mb-4 pr-2 overflow-y-auto max-h-40 scrollbar-thin scrollbar-thumb-pink-500 scrollbar-track-pink-200 hover:scrollbar-thumb-pink-600">
             {content}
           </div>
         </div>
@@ -93,6 +91,24 @@ const PostCard = ({
           </button>
         )}
       </div>
+
+      {/* Add this style tag for custom scrollbar in older browsers */}
+      <style jsx>{`
+        .scrollbar-thin::-webkit-scrollbar {
+          width: 8px;
+        }
+        .scrollbar-thin::-webkit-scrollbar-track {
+          background: #fbcfe8; /* pink-200 */
+          border-radius: 4px;
+        }
+        .scrollbar-thin::-webkit-scrollbar-thumb {
+          background: #ec4899; /* pink-500 */
+          border-radius: 4px;
+        }
+        .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+          background: #db2777; /* pink-600 */
+        }
+      `}</style>
     </>
   );
 };
