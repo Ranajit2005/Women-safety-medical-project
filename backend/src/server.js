@@ -10,6 +10,7 @@ import { connectDB } from './lib/dbConnection.js';
 import authRouter from './routes/auth.route.js';
 import articleRouter from './routes/article.route.js';
 import chatRouter from './routes/chat.route.js';
+import BlogRouter from './routes/blog.route.js';
 
 
 dotenv.config();
@@ -45,7 +46,7 @@ app.use(cors({
 
 
 
-let posts = []; // { id, user, content, comments: [{ user, text }] }
+//let posts = []; // { id, user, content, comments: [{ user, text }] }
 
 //routes
 app.use('/api/auth', authRouter);
@@ -53,6 +54,8 @@ app.use('/api/auth', authRouter);
 app.use('/api/article', articleRouter);
 
 app.use('/api/chat', chatRouter);
+
+app.use('/api/posts', BlogRouter);
 
 
 
@@ -66,28 +69,28 @@ app.get('/', (req, res) => {
 
 
 
-app.get("/api/posts", (req, res) => {
-    res.json(posts);
-});
+// app.get("/api/posts", (req, res) => {
+//     res.json(posts);
+// });
 
-app.post("/api/posts", (req, res) => {
-    const post = { id: Date.now(), ...req.body, comments: [] };
-    posts.push(post);
-    io.emit("new_post", post);
-    res.status(201).json(post);
-});
+// app.post("/api/posts", (req, res) => {
+//     const post = { id: Date.now(), ...req.body, comments: [] };
+//     posts.push(post);
+//     io.emit("new_post", post);
+//     res.status(201).json(post);
+// });
 
-app.post("/api/posts/:id/comment", (req, res) => {
-    const post = posts.find(p => p.id === +req.params.id);
-    if (post) {
-        const comment = req.body;
-        post.comments.push(comment);
-        io.emit("new_comment", { postId: post.id, comment });
-        res.status(201).json(comment);
-    } else {
-        res.status(404).json({ error: "Post not found" });
-    }
-});
+// app.post("/api/posts/:id/comment", (req, res) => {
+//     const post = posts.find(p => p.id === +req.params.id);
+//     if (post) {
+//         const comment = req.body;
+//         post.comments.push(comment);
+//         io.emit("new_comment", { postId: post.id, comment });
+//         res.status(201).json(comment);
+//     } else {
+//         res.status(404).json({ error: "Post not found" });
+//     }
+// });
 
 io.on("connection", (socket) => {
     console.log("User connected:", socket.id);
