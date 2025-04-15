@@ -1,6 +1,6 @@
 import React from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
-// import Navbar from './components/Navbar'
+import Navbar from './components/Navbar'
 import SignUp from './pages/SignUp'
 import LogIn from './pages/LogIn'
 import Home from './pages/Home'
@@ -48,20 +48,20 @@ function App() {
   return (
     <div>
 
-      {/* <Navbar /> */}
+      <Navbar />
       <ChatWindow />
       <Routes>
-        <Route path="/" element={authUser ? <Home /> : <Navigate to="login" />} />
+        <Route path="/" element={authUser ? <Home /> : <Navigate to="/login" />} />
         <Route path="/login" element={!authUser ? <LogIn /> : <Navigate to="/" />} />
         <Route path="/signup" element={!authUser ? <SignUp /> : <Navigate to="/" />} />
-        <Route path="/profile" element={authUser ? <ProfileUpdate /> : <Navigate to="login" />} />
-        <Route path="/contact" element={authUser ? <Contact /> : <Navigate to="login" />} />
-        <Route path="/form" element={authUser ? <PostForm /> : <Navigate to="login" />} />
-        <Route path="/diseases" element={authUser ? <Diseases /> : <Navigate to="login" />} />
-        <Route path="/subAndBody" element={authUser ? <SubAndBody /> : <Navigate to="login" />} />
-        <Route path="/product" element={authUser ? <Product /> : <Navigate to="login" />} />
-        <Route path="/articles" element={authUser ? <ArticlePage /> : <Navigate to="login" />} />
-        <Route path='/community' element={authUser ? <Community /> : <Navigate to="login" />} />
+        <Route path="/profile" element={authUser ? <ProfileUpdate /> : <Navigate to="/login" />} />
+        <Route path="/contact" element={authUser ? <Contact /> : <Navigate to="/login" />} />
+        <Route path="/form" element={authUser ? <PostForm /> : <Navigate to="/login" />} />
+        <Route path="/diseases" element={authUser ? <Diseases /> : <Navigate to="/login" />} />
+        <Route path="/subAndBody" element={authUser ? <SubAndBody /> : <Navigate to="/login" />} />
+        <Route path="/product" element={authUser ? <Product /> : <Navigate to="/login" />} />
+        <Route path="/articles" element={authUser ? <ArticlePage /> : <Navigate to="/login" />} />
+        <Route path='/community' element={authUser ? <Community /> : <Navigate to="/login" />} />
       </Routes>
 
       {/* <Footer/> */}

@@ -2,8 +2,7 @@ import mongoose from "mongoose";
 
 const commentSchema = new mongoose.Schema({
     user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User', // Assuming you have a User model
+        type: String,
         required: true,
     },
     text: {
@@ -14,8 +13,7 @@ const commentSchema = new mongoose.Schema({
 
 const postSchema = new mongoose.Schema({
     user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User', // User who made the post
+        type: String,
         required: true,
     },
     content: {
@@ -26,6 +24,6 @@ const postSchema = new mongoose.Schema({
 }, { timestamps: true });
 
 const Post = mongoose.model('Post', postSchema);
-const Comment = mongoose.model('Comment', commentSchema);
+//const Comment = mongoose.model('Comment', commentSchema);
 
-export { Post, Comment };
+export { Post };

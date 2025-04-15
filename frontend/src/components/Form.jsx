@@ -4,7 +4,7 @@ import { axiosInstance } from "../lib/axios";
 import { useAuthStore } from "../store/useAuthStore";
 import { useNavigate } from "react-router-dom";
 import { AlertCircle, FileImage, Loader2, Upload } from "lucide-react";
-import Navbar from "./Navbar";
+
 
 
 
@@ -95,7 +95,7 @@ const Form = () => {
         style={{ backgroundImage: `url('/bg/bg2.webp')` }}
       ></div>
 
-      <Navbar/>
+
 
       <div className="flex justify-center items-center h-screen relative mx-3 sm:mx-0 top-10 sm:top-10 pt-16">
         <form

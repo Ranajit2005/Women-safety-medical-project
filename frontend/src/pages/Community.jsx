@@ -12,6 +12,7 @@ export default function Community() {
 
   const { authUser } = useAuthStore();
   const currentUser = authUser?.fullName || "Anonymous User";
+  //const currentUserId = authUser?._id || null;
 
   useEffect(() => {
     fetchPosts();
@@ -25,9 +26,9 @@ export default function Community() {
         prev.map((p) =>
           p.id === postId
             ? {
-                ...p,
-                comments: [...(p.comments || []), comment],
-              }
+              ...p,
+              comments: [...(p.comments || []), comment],
+            }
             : p
         )
       );
@@ -42,9 +43,9 @@ export default function Community() {
         prev.map((p) =>
           p.id === postId
             ? {
-                ...p,
-                comments: p.comments.filter((c) => c.id !== commentId),
-              }
+              ...p,
+              comments: p.comments.filter((c) => c.id !== commentId),
+            }
             : p
         )
       );
